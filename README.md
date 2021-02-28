@@ -6,7 +6,7 @@ An Educational Chemistry React app that visually shows the properties of the ele
 `NB:` This web app was built solely for educational purposes.
 
 Happy learning, take a look around and explore:
-https:
+https://webperiodictable.web.app/
 
 ## npm packages used
 1. `hex-to-rgba` - convert hex to rgba
@@ -23,6 +23,7 @@ npm install periodic-table
 ```sh
 npm install element-histories
 ```
+
 4. CSS Color Palettes
 ```sh
 --app-background: #313740;
