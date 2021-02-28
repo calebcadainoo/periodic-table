@@ -3,7 +3,7 @@
 An Educational Chemistry React app that visually shows the properties of the elements of a periodic table and the periodic table arrangements itself. It also shows the pictures of the elements as well. This ideal to teach in schools where there is limited access to pictures of some of these elements.
 
 
-NB: This web app was built solely for educational purposes.
+`NB:` This web app was built solely for educational purposes.
 
 Happy learning, take a look around and explore:
 https:
