@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Periodic Table",
+  "name": "A react app that visually shows the properties of the elements of a periodic table and the periodic table arrangements itself",
   "icons": [
     {
       "src": "favicon.ico",
