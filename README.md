@@ -26,12 +26,14 @@ npm install element-histories
 
 4. CSS Color Palettes
 ```sh
---app-background: #313740;
---app-column-counter: #1e2128;
---app-row-counter: #252a32;
---app-menu: #36383d;
---app-menu-text: #fbfbfb;
---app-popup-top: #323942;
---app-popup-text: #2c3039;
---app-popup-background: #fefefe;
+:root{
+  --app-background: #313740;
+  --app-column-counter: #1e2128;
+  --app-row-counter: #252a32;
+  --app-menu: #36383d;
+  --app-menu-text: #fbfbfb;
+  --app-popup-top: #323942;
+  --app-popup-text: #2c3039;
+  --app-popup-background: #fefefe;
+}
 ```
