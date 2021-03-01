@@ -21,12 +21,13 @@ function AppWorkArea() {
       <h1>Periodic Table</h1>
       <div className="workarea-elements">
         {/* element */}
-        {/* <aside className="element">
+        <aside className="element">
           <div className="element-atomic-no">1</div>
           <div className="element-symbol">H</div>
           <div className="element-name">Hydrogen</div>
-        </aside> */}
+        </aside>
         {printElements()}
+        FEELING SLEEPY
       </div>
     </div>
   )
