@@ -1,0 +1,20 @@
+
+
+.navbar{
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background: var(--app-popup-top);
+  box-shadow: 0px 5px 22px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-item{
+  /* center this item top to bottom */
+}
+
+.navbar-name{
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}

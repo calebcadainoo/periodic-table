@@ -1,10 +1,16 @@
-import './App.css';
+import React from 'react'
+import './App.css'
+import AppMenu from './components/AppMenu'
+import AppWorkArea from './components/AppWorkArea'
+import NavBar from './components/NavBar'
 
 function App() {
   return (
-    <div className="App">
-      
-    </div>
+    <section className="App">
+      <NavBar />
+      <AppMenu />
+      <AppWorkArea />
+    </section>
   );
 }
 
