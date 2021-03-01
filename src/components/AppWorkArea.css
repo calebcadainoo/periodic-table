@@ -27,7 +27,7 @@
 }
 
 .element-atomic-no{
-  font-weight: 700;
+  font-weight: 400;
   font-size: 12px;
   position: absolute;
   top: 7px;
@@ -40,7 +40,7 @@
   font-size: 35px;
   padding-top: 7px;
   font-weight: 700;
-  padding-top: 7px;
+  padding-top: 15px;
   flex: 6;
 }
 
