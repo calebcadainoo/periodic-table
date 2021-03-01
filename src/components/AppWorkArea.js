@@ -14,12 +14,8 @@ function AppWorkArea() {
       <div className="workarea-elements">
         {Object.entries(data).map(
           (element) => (
-            <aside key={ element[1].atomicNumber } className="element">
-              <div className="element-atomic-no">{ element[1].atomicNumber }</div>
-              <div className="element-symbol">{ element[1].symbol }</div>
-              <div className="element-name">{ element[1].name }</div>
-            </aside>)
-        )}
+            console.log(element[1])
+          ))}
       </div>
     </div>
   )
