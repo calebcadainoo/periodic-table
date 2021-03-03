@@ -1,5 +1,8 @@
+import pt from './PeriodTableData.json'
+
 export const initialState = {
 	user: null,
+	periodicElements: pt.elements,
 	colorMap: {
     "noble gas": "#4d42b8",
     "alkaline earth metal":"#e45143",
@@ -16,16 +19,22 @@ export const initialState = {
 
 export const actionTypes = {
 	SET_USER: 'SET_USER',
+	SET_PERIODIC_TABLE: 'SET_PERIODIC_TABLE',
 	SET_PERIODIC_COLORS: 'SET_PERIODIC_COLORS',
 }
 
 const reducer = (state, action) => {
-	
+
 	switch (action.type) {
 		case actionTypes.SET_USER:
 			return {
 				...state,
 				user: action.user,
+			}
+		case actionTypes.SET_PERIODIC_TABLE:
+			return {
+				...state,
+				periodicElements: action.periodicElements,
 			}
 		case actionTypes.SET_PERIODIC_COLORS:
 			return {
