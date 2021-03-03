@@ -5,7 +5,7 @@
   /* padding-right: 30px; */
 }
 
-.workarea > * {
+.workarea * {
   transition: 0.3s ease;
   -webkit-transition: 0.3s ease;
 }
@@ -14,4 +14,5 @@
   display: grid;
   place-items: center;
   overflow: auto;
+  position: relative;
 }

@@ -3,10 +3,10 @@ import './PeriodicTable.css'
 import { useDataLayerValue } from '../../DataLayer'
 
 function PeriodicTable() {
-	const [{periodicElements}] = useDataLayerValue()
+	const [{periodicTable}] = useDataLayerValue()
 	const [{colorMap}] = useDataLayerValue()
-  const data = periodicElements
-	
+  const data = periodicTable
+
   return (
     <div className="periodic-table">
       {data.map((element) =>(

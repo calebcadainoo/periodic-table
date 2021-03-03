@@ -2,7 +2,7 @@ import pt from './PeriodTableData.json'
 
 export const initialState = {
 	user: null,
-	periodicElements: pt.elements,
+	periodicTable: pt.elements,
 	colorMap: {
     "noble gas": "#4d42b8",
     "alkaline earth metal":"#e45143",
@@ -34,7 +34,7 @@ const reducer = (state, action) => {
 		case actionTypes.SET_PERIODIC_TABLE:
 			return {
 				...state,
-				periodicElements: action.periodicElements,
+				periodicTable: action.periodicTable,
 			}
 		case actionTypes.SET_PERIODIC_COLORS:
 			return {
