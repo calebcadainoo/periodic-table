@@ -18,7 +18,7 @@ function NavBar() {
   return (
     <nav className="navbar">
       <div onClick={handleMenuState} className={`navbar-item navbar-menu ${menuCloseClass}`}>
-      <div class="middle"></div>
+      <div className="middle"></div>
       </div>
       <div className="navbar-item navbar-name">
         Periodic Table
