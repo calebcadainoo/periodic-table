@@ -14,7 +14,7 @@ function PeriodicTable() {
     "post-transition metal":"#7f4800",
     "polyatomic nonmetal": "#00A300",
     actinide: "#7f69e7",
-    lanthanide:"#4AABAF",
+    lanthanide:"#008f7a",
     metalloid:"#1e445d",
   }
   
