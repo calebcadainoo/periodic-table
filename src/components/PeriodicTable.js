@@ -1,5 +1,6 @@
 import React from 'react'
 import pt from '../PeriodTableData.json'
+import './PeriodicTable.css'
 
 function PeriodicTable() {
   const data = pt.elements
@@ -8,20 +9,23 @@ function PeriodicTable() {
   const colorMap = {
     // "noble gas": "#FFBC42",
     "noble gas": "#4d42b8",
-    "alkaline earth metal":"#EC67AE",
+    // "alkaline earth metal":"#EC67AE",
+    "alkaline earth metal":"#e45143",
     "diatomic nonmetal":"#D81159",
     "alkali metal":"#8F2D56",
     // "transition metal":"#58586B",
-    "transition metal":"#eb852d",
-    "post-transition metal":"#218380",
+    // "transition metal":"#eb852d",
+    "transition metal":"#56423e",
+    "post-transition metal":"#7f4800",
     "polyatomic nonmetal": "#00A300",
     actinide: "#7f69e7",
     lanthanide:"#4AABAF",
-    metalloid:"#73D2DE",
+    // metalloid:"#73D2DE",
+    metalloid:"#1e445d",
   }
   
   return (
-    <div className="workarea-elements">
+    <div className="periodic-table">
       {data.map((element) =>(
           <aside key={element.name} style={{
               gridColumn: element.xpos,

@@ -6,7 +6,7 @@ function AppWorkArea() {
   return (
     <div className="centroid workarea">
       <h1>Periodic Table</h1>
-      <div>
+      <div className="workarea-periodic-table">
         <PeriodicTable />
       </div>
     </div>
