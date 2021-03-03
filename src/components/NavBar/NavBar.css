@@ -14,8 +14,76 @@
   margin: 0;
 }
 
+/* navbar hamburger */
+.navbar-menu{
+	width: 30px;
+	height: 30px;
+	align-items: center;
+	justify-content: center;
+	margin-right: 10px;
+	cursor: pointer;
+	position: relative;
+}
+
+.navbar-menu > .middle{
+	width: 100%;
+	height: 2px !important;
+	background: var(--app-menu-text);
+	transition: 0.3s ease;
+	-webkit-transition: 0.3s ease;
+  transform: translateY(13px);
+}
+
+.navbar-menu > .middle:before, .navbar-menu > .middle:after{
+	content: '';
+	width: 100%;
+	height: 2px !important;
+  background: var(--app-menu-text);
+	position: absolute;
+	transition: 0.3s ease;
+	-webkit-transition: 0.3s ease;
+}
+
+.navbar-menu > .middle:before{
+	transform: translateY(-400%);
+}
+
+.navbar-menu > .middle:after{
+	transform: translateY(400%);
+}
+
+.menu-tapped{
+	position: relative;
+}
+
+.menu-tapped .middle{
+	background: transparent;
+	transition: 0.01s ease;
+}
+
+.menu-tapped .middle:before{
+	transform: rotate(45deg) translate(3%, -7%);
+}
+
+.menu-tapped .middle:after{
+	transform: rotate(-45deg) translate(-0%, -3%);
+}
+
+/* navbar name */
 .navbar-name{
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
+}
+
+.navbar-search{
+  width: 30px;
+  height: 30px;
+  display: flex;
+}
+
+.navbar-search img{
+  width: 65%;
+  object-fit: contain;
+  align-self: center;
 }

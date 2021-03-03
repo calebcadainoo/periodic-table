@@ -1,14 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './NavBar.css'
+import SearchIcon from '../../ico/search.svg'
 
 function NavBar() {
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [menuCloseClass, setMenuCloseClass] = useState('')
+  const handleMenuState = () => {
+    if (menuOpen === false) {
+      setMenuOpen(true)
+      setMenuCloseClass('menu-tapped')
+    } else {
+      setMenuOpen(false)
+      setMenuCloseClass('')
+    }
+  }
+
   return (
     <nav className="navbar">
-      <div className="navbar-item navbar-menu">ham menu</div>
+      <div onClick={handleMenuState} className={`navbar-item navbar-menu ${menuCloseClass}`}>
+      <div class="middle"></div>
+      </div>
       <div className="navbar-item navbar-name">
         Periodic Table
       </div>
-      <div className="navbar-item navbar-search">search</div>
+      <div className="navbar-item navbar-search">
+        <img src={SearchIcon} alt="search icon"/>
+      </div>
     </nav>
   )
 }
