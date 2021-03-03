@@ -15,12 +15,14 @@ export const initialState = {
     lanthanide:"#008f7a",
     metalloid:"#1e445d",
   },
+	periodicElOpacity: 1,
 }
 
 export const actionTypes = {
 	SET_USER: 'SET_USER',
 	SET_PERIODIC_TABLE: 'SET_PERIODIC_TABLE',
 	SET_PERIODIC_COLORS: 'SET_PERIODIC_COLORS',
+	SET_PERIODIC_EL_OPACITY: 'SET_PERIODIC_EL_OPACITY',
 }
 
 const reducer = (state, action) => {
@@ -40,6 +42,11 @@ const reducer = (state, action) => {
 			return {
 				...state,
 				colorMap: action.colorMap,
+			}
+		case actionTypes.SET_PERIODIC_EL_OPACITY:
+			return {
+				...state,
+				periodicElOpacity: action.periodicElOpacity,
 			}
 		default:
 			return state
