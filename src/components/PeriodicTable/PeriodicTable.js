@@ -7,10 +7,23 @@ function PeriodicTable() {
 	const [{colorMap}] = useDataLayerValue()
   const data = periodicTable
 
+	const handleElementClick = function (e) {
+		const targetEl = e.target.offsetParent
+		const elcate = targetEl.dataset.category
+		const name = targetEl.dataset.name
+
+		console.log(e.target.offsetParent)
+		console.log(elcate)
+		console.log(name)
+	}
+
   return (
     <div className="periodic-table">
       {data.map((element) =>(
-          <aside key={element.name} style={{
+          <aside onClick={handleElementClick} 
+						key={element.name} 
+						data-name={element.name} 
+						data-category={element.category} style={{
               gridColumn: element.xpos,
               gridRow: element.ypos,
               background: colorMap[element.category],
