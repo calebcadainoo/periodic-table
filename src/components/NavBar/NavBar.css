@@ -10,7 +10,8 @@
 }
 
 .navbar-item{
-  /* center this item top to bottom */
+  align-self: center;
+  margin: 0;
 }
 
 .navbar-name{

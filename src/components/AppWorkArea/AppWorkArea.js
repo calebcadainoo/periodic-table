@@ -1,6 +1,6 @@
 import React from 'react'
 import './AppWorkArea.css'
-import PeriodicTable from './PeriodicTable'
+import PeriodicTable from '../PeriodicTable/PeriodicTable'
 
 function AppWorkArea() {
   return (

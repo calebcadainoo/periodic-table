@@ -1,7 +1,8 @@
 
 .workarea{
-  /* component styles will be here */
+  overflow-x: auto;
   padding: 15px;
+  /* padding-right: 30px; */
 }
 
 .workarea > * {
@@ -12,4 +13,5 @@
 .workarea-periodic-table{
   display: grid;
   place-items: center;
+  overflow: auto;
 }

@@ -1,8 +1,8 @@
 import React from 'react'
 import './App.css'
-import AppMenu from './components/AppMenu'
-import AppWorkArea from './components/AppWorkArea'
-import NavBar from './components/NavBar'
+import AppMenu from './components/AppMenu/AppMenu'
+import AppWorkArea from './components/AppWorkArea/AppWorkArea'
+import NavBar from './components/NavBar/NavBar'
 
 function App() {
   return (
