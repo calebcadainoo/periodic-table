@@ -46,7 +46,7 @@
 .pt-legend {
   position: absolute;
   top: 7%;
-  left: 20%;
+  left: 230px;
   z-index: 5;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -57,6 +57,7 @@
   display: flex;
   cursor: pointer;
   border-radius: 5px;
+  padding: 4px;
 }
 
 .pt-legend-item:hover {
@@ -73,10 +74,10 @@
 }
 
 .pt-legend-name{
-  padding: 4px;
   font-size: 10px;
   letter-spacing: 1px;
   padding-left: 10px;
   text-transform: uppercase;
   align-self: center;
+  white-space: nowrap;
 }
