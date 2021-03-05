@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './PeriodicTable.css'
 import { useDataLayerValue } from '../../DataLayer'
+import PeriodicTableModalDetails from './PeriodicTableModalDetails'
 
 function PeriodicTable() {
 	const [{periodicTable}] = useDataLayerValue()
@@ -12,6 +13,7 @@ function PeriodicTable() {
 	const [ypos, setYpos] = useState()
 	const [elWidth, setElWidth] = useState()
 	const [elHeight, setElHeight] = useState()
+	const [overlayPosType, setOverlayPosType] = useState('fixed')
 
 	const handleElementClick = function (e) {
 		const targetEl = e.target.offsetParent
@@ -33,21 +35,26 @@ function PeriodicTable() {
 		setElWidth(newWidth)
 		setElHeight(newHeight)
 
-		// console.log(e.target.offsetParent)
-		// console.log(elcate)
-		// console.log(name)
+		setTimeout(() => {
+			setOverlayPosType('fixed')
+			setXpos(0)
+			setYpos(0)
+			setElWidth('100vw')
+			setElHeight('100vh')
+		}, 700);
+	}
+
+	const detailsStyles = {
+		position: overlayPosType,
+		top: ypos,
+		left: xpos,
+		width: elWidth,
+		height: elHeight,
 	}
 
   return (
     <div className="periodic-table">
-			<div className="cover"
-				style={{
-					top: ypos,
-					left: xpos,
-					width: elWidth,
-					height: elHeight,
-				}}
-				></div>
+			<PeriodicTableModalDetails detailsStyles={detailsStyles} />
       {data.map((element) =>(
           <aside onClick={handleElementClick} 
 						key={element.name} 

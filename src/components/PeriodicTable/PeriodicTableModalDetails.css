@@ -1,0 +1,65 @@
+
+
+.pt-modal-container {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 7;
+  border-radius: 2px;
+  /* filter: blur(40px); */
+  /* backdrop-filter: blur(40px); */
+  /* display: grid; */
+  /* place-items: center; */
+  /* display: none; */
+  padding: 20px;
+}
+
+.pt-details-modal{
+  margin: auto;
+  display: table;
+  width: 90%;
+  max-width: 500px;
+}
+
+/* header top nav */
+.pt-modal-header {
+  display: table;
+  margin: auto;
+  padding-top: 150px;
+  margin-bottom: 12px;
+}
+
+.pt-modal-header-inner {
+  display: grid;
+  grid-template-columns: repeat(3, var(--element-dimension));
+  grid-gap: 12px;
+  place-items: center;
+}
+
+
+.pt-modal-top-nav{
+  align-self: center;
+  width: 100% !important;
+  height: var(--element-dimension);
+  position: relative;
+  /* background: #fff;
+  color: var(--app-menu); */
+  border-radius: 4px;
+  box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.7);
+}
+
+.pt-modal-left,
+.pt-modal-right {
+  opacity: 0.7;
+}
+
+
+/* modal body */
+.pt-modal-body {
+  color: var(--app-menu);
+  background: #fff;
+  /* padding-top: 12px; */
+}
