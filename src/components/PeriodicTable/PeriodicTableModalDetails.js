@@ -44,10 +44,27 @@ function PeriodicTableModalDetails(props) {
         </header>
 
         <section className="pt-modal-body">
+          {/* top */}
           <div className="ptmb-top">
-           <div className="ptmb-atomic-no">
-             20
-           </div>
+            {/* right */}
+            <div className="ptmb-top-left">
+              <div className="ptmb-top-atomic-no">20</div>
+              <div className="ptmb-top-symbol">Ca</div>
+            </div>
+            {/* right */}
+            <div className="ptmb-top-right">
+              <div className="ptmb-top-name">Calcium</div>
+              <div className="ptmb-top-info">
+                Atomic Mass: 40.0784 g/mol
+              </div>
+              <div className="ptmb-top-info">
+                Electron Shells: 2, 8, 8, 2
+              </div>
+            </div>
+          </div>
+          {/* pic */}
+          <div className="ptmb-image">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Calcium_Spectrum.png" alt="Image of Calcium"/>
           </div>
         </section>
       </div>

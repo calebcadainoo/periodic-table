@@ -61,5 +61,51 @@
 .pt-modal-body {
   color: var(--app-menu);
   background: #fff;
-  /* padding-top: 12px; */
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.ptmb-top {
+  display: flex;
+}
+
+.ptmb-top-left{
+  flex: 1;
+  color: var(--app-menu);
+}
+
+.ptmb-top-right{
+  flex: 5;
+  padding-left: 12px;
+}
+
+.ptmb-top-atomic-no{
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.ptmb-top-symbol{
+  font-size: 44px;
+}
+
+.ptmb-top-name {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.ptmb-top-info {
+  font-size: 12px;
+  margin-bottom: 2px;
+  line-height: 1.3;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.ptmb-image {
+  padding: 12px 0;
+}
+
+.ptmb-image img{
+  width: 100%;
+  object-fit: contain;
 }
