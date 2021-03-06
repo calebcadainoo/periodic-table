@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import React from 'react'
 import { useDataLayerValue } from '../../DataLayer'
 import './PeriodicTableModalDetails.css'
@@ -62,9 +63,38 @@ function PeriodicTableModalDetails(props) {
               </div>
             </div>
           </div>
+          <div className="ptmb-body-info">Group: 2</div>
+            <div className="ptmb-body-info">Period: 4</div>
+          <div className="ptmb-body-info">Discovered by: Humphry Davy</div>
+          <div className="ptmb-body-info">Category: alkaline earth metal</div>
+          <div className="ptmb-body-info">Named by: Humphry Davy</div>
+          <div className="ptmb-body-info">
+              Calcium is a chemical element with symbol Ca and 
+              atomic number 20. Calcium is a soft gray 
+              alkaline earth metal, fifth-most-abundant 
+              element by mass in the Earth's crust. 
+              The ion Ca2+ is also the fifth-most-abundant 
+              dissolved ion in seawater by both molarity and mass, 
+              after sodium, chloride, magnesium, and sulfate.
+            </div>
           {/* pic */}
           <div className="ptmb-image">
+            <img src="https://sciencenotes.org/wp-content/uploads/2015/05/Calcium.jpg" alt="Image of Calcium"/>
+          </div>
+          <div className="ptmb-image">
             <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Calcium_Spectrum.png" alt="Image of Calcium"/>
+          </div>
+          <div className="ptmb-body">
+            <div className="ptmb-body-info">Color: null</div>
+            <div className="ptmb-body-info">Appearance: shinny</div>
+            <div className="ptmb-body-info">Density: 1.55 g/cm<sup>3</sup></div>
+            <div className="ptmb-body-info">Boiling Point: 1757 K</div>
+            <div className="ptmb-body-info">Melting Point: 1115 K</div>
+            <div className="ptmb-body-info">Electron Configuration: 1s2 2s2 2p6 3s2 3p6 4s2</div>
+            <div className="ptmb-body-info">Electron Affinity: 2.37</div>
+            <div className="ptmb-body-info">Room temperature phase: Solid</div>
+            <div className="ptmb-body-info">Electronegativity Pauling: 1.00</div>
+            <div className="ptmb-body-info">Molar Heat: 25.929 J/(mol·K)</div>
           </div>
         </section>
       </div>

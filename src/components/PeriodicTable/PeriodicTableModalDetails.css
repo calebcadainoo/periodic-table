@@ -15,12 +15,13 @@
   /* place-items: center; */
   /* display: none; */
   padding: 20px;
+  overflow: auto;
 }
 
 .pt-details-modal{
   margin: auto;
   display: table;
-  width: 90%;
+  width: 97%;
   max-width: 500px;
 }
 
@@ -108,4 +109,10 @@
 .ptmb-image img{
   width: 100%;
   object-fit: contain;
+}
+
+.ptmb-body-info {
+  font-size: 12px;
+  margin-bottom: 2px;
+  line-height: 1.3;
 }
