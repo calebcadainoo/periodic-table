@@ -1,10 +1,10 @@
-/* eslint-disable jsx-a11y/img-redundant-alt */
 import React from 'react'
 import { useDataLayerValue } from '../../DataLayer'
 import './PeriodicTableDetails.css'
 
 function PeriodicTableModalDetails(props) {
   const[{periodicTable}] = useDataLayerValue()
+  console.log(periodicTable)
 
   return (
     <div className="pt-detail-container" style={props.detailsStyles}>
@@ -14,9 +14,16 @@ function PeriodicTableModalDetails(props) {
           {/* top */}
           <div className="pt-det-header-inner">
             <header className="pt-det-header-top-box">
+              {/* top controls */}
+              <div className="pt-det-header-controls flex-row">
+                <div className="app-back-btn">b</div>
+                <div className="app-ctrl-btn">w</div>
+              </div>
+
+              {/* other info */}
               <div className="pt-det-header-top">
                 {/* element tag */}
-                <div className="pt-det-header-element-tag">
+                <div className="pt-det-header-element-tag flex-row">
                   <div className="pt-det-header-atomic-no">
                     20
                   </div>
@@ -26,10 +33,14 @@ function PeriodicTableModalDetails(props) {
                 </div>
                 
                 {/* element name */}
-                <div className="pt-det-header-element">
-                  <div className="pt-det-header-symbol">Ca</div>
+                <div className="pt-det-header-element flex-row">
+                  <div className="pt-det-header-symbol">
+                    Ca
+                  </div>
                   <div className="pt-det-header-element-name-box">
-                    <div className="pt-det-header-name">Calcium</div>
+                    <div className="pt-det-header-name">
+                      Calcium
+                    </div>
                     <div className="pt-det-header-weight">
                       40.078(g/mol)
                     </div>
@@ -39,8 +50,16 @@ function PeriodicTableModalDetails(props) {
             </header>
 
             {/* footer */}
-            <footer className="det-header-footer">
+            <footer className="pt-det-header-footer flex-row">
+              {/* prev */}
+              <div className="pt-det-ctrl-btn pt-prev-btn">
+                19 &bull; Potassium
+              </div>
 
+              {/* next */}
+              <div className="pt-det-ctrl-btn pt-next-btn">
+                Scandium &bull; 21
+              </div>
             </footer>
           </div>
         </header>

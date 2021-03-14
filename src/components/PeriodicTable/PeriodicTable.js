@@ -18,8 +18,8 @@ function PeriodicTable() {
 
 	const handleElementClick = function (e) {
 		const targetEl = e.target.offsetParent
-		const elcate = targetEl.dataset.category
-		const name = targetEl.dataset.name
+		// const elcate = targetEl.dataset.category
+		// const name = targetEl.dataset.name
 
 		const newWidth = targetEl.offsetWidth
 		const newHeight = targetEl.offsetHeight

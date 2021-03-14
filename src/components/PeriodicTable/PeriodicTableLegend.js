@@ -1,3 +1,4 @@
+/* eslint-disable no-empty-pattern */
 import React, { useRef } from 'react'
 import { useDataLayerValue } from '../../DataLayer'
 import { actionTypes } from '../../reducer'

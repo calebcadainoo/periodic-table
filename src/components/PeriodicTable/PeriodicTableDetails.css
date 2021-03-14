@@ -40,5 +40,8 @@
 /* element tag */
 .pt-det-header-element-tag {
   background: #e45143;
-  
+  padding: 4px 7px;
+  border-radius: 0 5px 5px 0;
 }
+
+
