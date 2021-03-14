@@ -2,6 +2,7 @@ import React from 'react'
 import './AppWorkArea.css'
 import PeriodicTable from '../PeriodicTable/PeriodicTable'
 import PeriodicTableLegend from '../PeriodicTable/PeriodicTableLegend'
+import PeriodicTableDetails from '../PeriodicTable/PeriodicTableDetails'
 
 function AppWorkArea() {
   return (
@@ -10,6 +11,7 @@ function AppWorkArea() {
       <div className="workarea-periodic-table">
         <PeriodicTableLegend />
         <PeriodicTable />
+        <PeriodicTableDetails />
       </div>
     </div>
   )
