@@ -1,0 +1,44 @@
+
+
+.pt-detail-container {
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 7;
+  padding: 60px 15px;
+  color: #fff;
+}
+
+.pt-detail-holder {
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+}
+
+/* header */
+.pt-detail-header {
+  width: 100%;
+  height: 300px;
+  background: #111;
+  border-radius: 2px;
+}
+
+.pt-det-header-img {
+  width: 100%;
+  object-fit: cover;
+}
+
+/* header top */
+.pt-det-header-inner {
+  width: 100%;
+  height: 100%;
+}
+
+/* element tag */
+.pt-det-header-element-tag {
+  background: #e45143;
+  
+}

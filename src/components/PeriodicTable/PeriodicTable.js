@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import './PeriodicTable.css'
 import { useDataLayerValue } from '../../DataLayer'
-import PeriodicTableModalDetails from './PeriodicTableModalDetails'
+// import PeriodicTableModalDetails from './PeriodicTableModalDetails'
+import PeriodicTableDetails from './PeriodicTableDetails'
 
 function PeriodicTable() {
 	const [{periodicTable}] = useDataLayerValue()
@@ -54,7 +55,8 @@ function PeriodicTable() {
 
   return (
     <div className="periodic-table">
-			<PeriodicTableModalDetails detailsStyles={detailsStyles} />
+			{/* <PeriodicTableModalDetails detailsStyles={detailsStyles} /> */}
+			<PeriodicTableDetails detailsStyles={detailsStyles} />
       {data.map((element) =>(
           <aside onClick={handleElementClick} 
 						key={element.name} 
