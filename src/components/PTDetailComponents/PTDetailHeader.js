@@ -10,7 +10,9 @@ function PTDetailHeader() {
           {/* top controls */}
           <div className="pt-det-header-controls">
             <div className="pt-det-ctrl-top pt-det-back-btn"></div>
-            <div className="pt-det-ctrl-top pt-det-wiki-btn"></div>
+            <a href="https://en.wikipedia.org/wiki/Calcium" rel="noreferrer" target="_blank">
+              <div className="pt-det-ctrl-top pt-det-wiki-btn"></div>
+            </a>
           </div>
 
           {/* other info */}

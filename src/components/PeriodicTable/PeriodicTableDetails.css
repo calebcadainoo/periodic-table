@@ -7,9 +7,15 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 7;
+  z-index: 77;
   padding: 60px 15px;
   color: #fff;
+	overflow: auto;
+}
+
+.minimal-space {
+	width: 100%;
+	height: 20px;
 }
 
 .pt-det-holder {
@@ -166,6 +172,7 @@
 	letter-spacing: 0.5px;
 	background-repeat: no-repeat;
 	background-size: 10px;
+	cursor: pointer;
 }
 
 .pt-prev-btn {
@@ -188,7 +195,7 @@
 
 .pt-det-group-label {
 	padding: 14px 15px;
-	background: coral;
+	background: #333;
 }
 
 .pt-det-group-label img {
@@ -205,6 +212,25 @@
 	letter-spacing: 0.5px;
 }
 
-.pt-det-element-info-box{
+.pt-det-element-info-box {
 	background: #1c1f26;
+	padding: 14px 15px;
+	border-bottom: 1px solid rgba(114, 114, 114, 0.35);
+}
+
+.pt-det-element-info-box:last-child {
+	border-bottom: none;
+}
+
+.pt-det-element-info-box label {
+	opacity: 0.5;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 10px;
+}
+
+.pt-det-element-info-value {
+	font-size: 14px;
+	letter-spacing: 0.5px;
+	line-height: 1.6;
 }
