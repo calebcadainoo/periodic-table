@@ -1,5 +1,5 @@
-import React, { useState, useCallback } from 'react'
-// import { useDataLayerValue } from '../../DataLayer'
+import React, { useState } from 'react'
+import { useDataLayerValue } from '../../context-api/DataLayer'
 import './PeriodicTableDetails.css'
 import PTDetailHeader from '../PTDetailComponents/PTDetailHeader'
 import OverviewImage from '../../ico/overview.svg'
@@ -9,23 +9,30 @@ import ReactivityImage from '../../ico/reactivity.svg'
 import PTDetailLabel from '../PTDetailComponents/PTDetailLabel'
 import PTDetailValue from '../PTDetailComponents/PTDetailValue'
 import Modal from 'react-modal'
+import { actionTypes } from '../../context-api/reducer'
 
-Modal.setAppElement('#root')
 
 function PeriodicTableModalDetails(props) {
-  // const[{periodicTable}] = useDataLayerValue()
+  const[{ periodicDetails }, dispatch] = useDataLayerValue()
   // console.log(periodicTable)
 
-	const [isModalOpen, setIsModalOpen] = useState(true)
+	const [isModalOpen, setIsModalOpen] = useState(periodicDetails)
+	const closeDetailsModal = (boolVal) => {
+		setIsModalOpen(boolVal)
+		dispatch({
+			type: actionTypes.SET_DETAILS_MODAL,
+			periodicDetails: boolVal
+		})
+	}
 
   return (
     <Modal overlayClassName="pt-detail-container"
 					className="modal-content"
-					isOpen={isModalOpen}
+					isOpen={periodicDetails}
 					contentLabel={"Calcium Details"}
 					shouldCloseOnOverlayClick={true}
 					onRequestClose={() => {
-						setIsModalOpen(false)
+						closeDetailsModal(isModalOpen)
 					}}
 		>
       <aside>

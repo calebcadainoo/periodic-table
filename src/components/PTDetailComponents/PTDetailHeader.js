@@ -1,10 +1,17 @@
-import React, { useCallback } from 'react'
+/* eslint-disable no-empty-pattern */
+import React from 'react'
+import { useDataLayerValue } from '../../context-api/DataLayer'
+import { actionTypes } from '../../context-api/reducer'
 
 function PTDetailHeader({onBackClick, atomicNo, category, categoryColor, symbol, name, atomicMass, picture, moreURL, prevAtomicNo, prevName, nextAtomicNo, nextName}) {
+  const[{}, dispatch] = useDataLayerValue()
   // close modal
-  const handleClose = useCallback((e) => {
-    onBackClick(false)
-  }, [onBackClick])
+  const handleClose = () => {
+    dispatch({
+			type: actionTypes.SET_DETAILS_MODAL,
+			periodicDetails: false
+		})
+  }
 
   return (
     <header className="pt-det-header">

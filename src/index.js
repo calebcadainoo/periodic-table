@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { DataLayer } from './DataLayer';
-import reducer, { initialState } from './reducer';
+import { DataLayer } from './context-api/DataLayer';
+import reducer, { initialState } from './context-api/reducer';
+import Modal from 'react-modal';
 
+Modal.setAppElement('#root');
 ReactDOM.render(
   <DataLayer initialState={initialState} reducer={reducer}>
     <App />

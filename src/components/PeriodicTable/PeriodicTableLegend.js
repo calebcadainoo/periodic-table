@@ -1,7 +1,7 @@
 /* eslint-disable no-empty-pattern */
 import React, { useRef } from 'react'
-import { useDataLayerValue } from '../../DataLayer'
-import { actionTypes } from '../../reducer'
+import { useDataLayerValue } from '../../context-api/DataLayer'
+import { actionTypes } from '../../context-api/reducer'
 
 function PeriodicTableLegend() {
   const [{colorMap}] = useDataLayerValue()
