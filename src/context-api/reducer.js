@@ -17,6 +17,7 @@ export const initialState = {
   },
 	periodicElOpacity: 1,
 	periodicDetails: false,
+	periodicSelectedElement: undefined,
 }
 
 export const actionTypes = {
@@ -24,7 +25,8 @@ export const actionTypes = {
 	SET_PERIODIC_TABLE: 'SET_PERIODIC_TABLE',
 	SET_PERIODIC_COLORS: 'SET_PERIODIC_COLORS',
 	SET_PERIODIC_EL_OPACITY: 'SET_PERIODIC_EL_OPACITY',
-	SET_DETAILS_MODAL: 'SET_DETAILS_MODAL'
+	SET_DETAILS_MODAL: 'SET_DETAILS_MODAL',
+	SET_SELECTED_ELEMENT: 'SET_SELECTED_ELEMENT',
 }
 
 const reducer = (state, action) => {
@@ -54,6 +56,11 @@ const reducer = (state, action) => {
 			return {
 				...state,
 				periodicDetails: action.periodicDetails,
+			}
+		case actionTypes.SET_SELECTED_ELEMENT:
+			return {
+				...state,
+				periodicSelectedElement: action.periodicSelectedElement,
 			}
 		default:
 			return state

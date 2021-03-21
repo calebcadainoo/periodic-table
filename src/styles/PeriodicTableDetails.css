@@ -79,14 +79,14 @@
 }
 
 .pt-det-back-btn {
-  background-image: url(../../ico/back-wh.svg);
+  background-image: url(../ico/back-wh.svg);
   background-size: 50%;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .pt-det-wiki-btn {
-  background-image: url(../../ico/wikipedia-logo.svg);
+  background-image: url(../ico/wikipedia-logo.svg);
   background-size: 50%;
   background-position: center;
   background-repeat: no-repeat;
@@ -147,7 +147,7 @@
 .pt-det-header-expand{
 	width: 30px;
 	height: 30px;
-	background-image: url(../../ico/fullscreen.svg);
+	background-image: url(../ico/fullscreen.svg);
 	background-repeat: no-repeat;
 	background-size: 50%;
 	background-position: center;
@@ -183,13 +183,13 @@
 
 .pt-prev-btn {
 	background-position: 7px center;
-	background-image: url(../../ico/prev-wh.svg);
+	background-image: url(../ico/prev-wh.svg);
 	border-right: 1px solid rgba(114, 114, 114, 0.35);
 }
 
 .pt-next-btn {
 	background-position: calc(100% - 7px) center;
-	background-image: url(../../ico/next-wh.svg);
+	background-image: url(../ico/next-wh.svg);
 }
 
 

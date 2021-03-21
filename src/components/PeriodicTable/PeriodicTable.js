@@ -6,7 +6,7 @@ import { actionTypes } from '../../context-api/reducer'
 // import PeriodicTableDetails from './PeriodicTableDetails'
 
 function PeriodicTable() {
-	const [{ periodicTable, periodicDetails }, dispatch] = useDataLayerValue()
+	const [{ periodicTable, periodicDetails, periodicSelectedElement }, dispatch] = useDataLayerValue()
 	const [{colorMap}] = useDataLayerValue()
 	const [{periodicElOpacity}] = useDataLayerValue()
   const data = periodicTable
@@ -18,15 +18,21 @@ function PeriodicTable() {
 	// const [overlayPosType, setOverlayPosType] = useState('fixed')
 
 	const handleElementClick = (atomicNo) => {
+		const selectedElement = periodicTable.filter((element) => element.number === atomicNo)[0]
+		
 		dispatch({
 			type: actionTypes.SET_DETAILS_MODAL,
 			periodicDetails: true
 		})
 
-		const selectedElement = periodicTable.filter((element) => element.number === atomicNo)[0]
+		dispatch({
+			type: actionTypes.SET_SELECTED_ELEMENT,
+			periodicSelectedElement: selectedElement 
+		})
+
 		console.log('CLICKED ATOMIC No: ', atomicNo)
-		console.log('CLICKED detail: ', periodicDetails)
-		console.log('NOW Element: ', selectedElement)
+		console.log('NOW Element: ', periodicSelectedElement)
+
 	}
 	
 
