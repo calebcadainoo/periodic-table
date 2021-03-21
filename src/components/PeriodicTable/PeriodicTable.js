@@ -1,5 +1,5 @@
 import React from 'react'
-import './PeriodicTable.css'
+import '../../styles/PeriodicTable.css'
 import { useDataLayerValue } from '../../context-api/DataLayer'
 import { actionTypes } from '../../context-api/reducer'
 // import PeriodicTableModalDetails from './PeriodicTableModalDetails'

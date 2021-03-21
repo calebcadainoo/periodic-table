@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './NavBar.css'
+import '../../styles/NavBar.css'
 import SearchIcon from '../../ico/search.svg'
 
 function NavBar() {

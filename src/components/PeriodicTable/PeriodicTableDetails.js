@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDataLayerValue } from '../../context-api/DataLayer'
-import './PeriodicTableDetails.css'
+import '../../styles/PeriodicTableDetails.css'
 import PTDetailHeader from '../PTDetailComponents/PTDetailHeader'
 import OverviewImage from '../../ico/overview.svg'
 import PropertiesImage from '../../ico/property.svg'

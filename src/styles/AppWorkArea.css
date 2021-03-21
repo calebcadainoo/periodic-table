@@ -1,0 +1,18 @@
+
+.workarea{
+  overflow-x: auto;
+  padding: 15px;
+  /* padding-right: 30px; */
+}
+
+.workarea * {
+  transition: 0.3s ease;
+  -webkit-transition: 0.3s ease;
+}
+
+.workarea-periodic-table{
+  display: grid;
+  place-items: center;
+  overflow: auto;
+  position: relative;
+}

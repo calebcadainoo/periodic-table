@@ -1,0 +1,83 @@
+
+
+.periodic-table{
+    display: grid;
+    grid-template-columns: repeat(18, var(--element-dimension));
+    grid-template-rows: repeat(10, var(--element-dimension));
+    grid-gap: 4px;
+  }
+  
+  .element{
+    background: var(--app-menu);
+    box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.3);
+    border-radius: 2px;
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .element-atomic-no{
+    font-weight: 400;
+    font-size: 10px;
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    display: table;
+    flex: 0;
+  }
+  
+  .element-symbol{
+    font-size: 25px;
+    padding-top: 7px;
+    font-weight: 700;
+    padding-top: 15px;
+    flex: 6;
+  }
+  
+  .element-name{
+    font-size: 9px;
+    letter-spacing: 0.54px;
+    flex: 3;
+    text-transform: capitalize;
+  }
+
+  /* Legend */
+.pt-legend {
+  position: absolute;
+  top: 7%;
+  left: 230px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 12px;
+}
+
+.pt-legend-item {
+  display: flex;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 4px;
+}
+
+.pt-legend-item:hover {
+  background: #fff;
+  color: var(--app-menu);
+  box-shadow: 0px 5px 22px rgba(0, 0, 0, 0.3);
+}
+
+.pt-legend-color{
+  width: 25px;
+  height: 15px;
+  border-radius: 5px;
+  align-self: center;
+}
+
+.pt-legend-name{
+  font-size: 10px;
+  letter-spacing: 1px;
+  padding-left: 10px;
+  text-transform: uppercase;
+  align-self: center;
+  white-space: nowrap;
+}
+

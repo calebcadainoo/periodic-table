@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React from 'react'
 import { useDataLayerValue } from '../../DataLayer'
-import './PeriodicTableModalDetails.css'
+import '../../styles/PeriodicTableModalDetails.css'
 
 function PeriodicTableModalDetails(props) {
   const[{periodicTable}] = useDataLayerValue()

@@ -1,5 +1,5 @@
 import React from 'react'
-import './AppWorkArea.css'
+import '../../styles/AppWorkArea.css'
 import PeriodicTable from '../PeriodicTable/PeriodicTable'
 import PeriodicTableLegend from '../PeriodicTable/PeriodicTableLegend'
 import PeriodicTableDetails from '../PeriodicTable/PeriodicTableDetails'
