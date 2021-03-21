@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useCallback } from 'react'
 // import { useDataLayerValue } from '../../DataLayer'
 import './PeriodicTableDetails.css'
 import PTDetailHeader from '../PTDetailComponents/PTDetailHeader'
@@ -8,16 +8,42 @@ import AtomicPropertiesImage from '../../ico/property.svg'
 import ReactivityImage from '../../ico/reactivity.svg'
 import PTDetailLabel from '../PTDetailComponents/PTDetailLabel'
 import PTDetailValue from '../PTDetailComponents/PTDetailValue'
+import Modal from 'react-modal'
+
+Modal.setAppElement('#root')
 
 function PeriodicTableModalDetails(props) {
   // const[{periodicTable}] = useDataLayerValue()
   // console.log(periodicTable)
 
+	const [isModalOpen, setIsModalOpen] = useState(true)
+
   return (
-    <div className="pt-detail-container">
+    <Modal overlayClassName="pt-detail-container"
+					className="modal-content"
+					isOpen={isModalOpen}
+					contentLabel={"Calcium Details"}
+					shouldCloseOnOverlayClick={true}
+					onRequestClose={() => {
+						setIsModalOpen(false)
+					}}
+		>
       <aside>
 				<section className="pt-det-holder">
-					<PTDetailHeader />
+					<PTDetailHeader atomicNo="20"
+						category="Alkaline Earth Metals"
+						categoryColor=""
+						symbol="Ca"
+						name="Calcium"
+						atomicMass="40.078"
+						picture="https://www.thoughtco.com/thmb/SuB85Nf5V3SIlFjQCq5Jnt4E-hM=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/Calcium-58efae5f5f9b582c4d2d340f.jpg"
+						moreURL="https://en.wikipedia.org/wiki/Calcium"
+						prevAtomicNo="19"
+						prevName="Potassium"
+						nextAtomicNo="21"
+						nextName="Scandium"
+						onBackClick={setIsModalOpen}
+					/>
 
 					<footer className="pt-det-footer-box">
 						{/* label */}
@@ -59,7 +85,7 @@ function PeriodicTableModalDetails(props) {
 				</section>
 				<div className="minimal-space"></div>
 			</aside>
-    </div>
+    </Modal>
   )
 }
 

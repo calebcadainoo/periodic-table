@@ -1,16 +1,23 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 
-function PTDetailHeader() {
+function PTDetailHeader({onBackClick, atomicNo, category, categoryColor, symbol, name, atomicMass, picture, moreURL, prevAtomicNo, prevName, nextAtomicNo, nextName}) {
+  // close modal
+  const handleClose = useCallback((e) => {
+    onBackClick(false)
+  }, [onBackClick])
+
   return (
     <header className="pt-det-header">
-      <img className="pt-det-header-img" src="https://www.thoughtco.com/thmb/SuB85Nf5V3SIlFjQCq5Jnt4E-hM=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/Calcium-58efae5f5f9b582c4d2d340f.jpg" alt=" "/>
+      <img className="pt-det-header-img" src={picture} alt={name}/>
       {/* top */}
       <div className="pt-det-header-inner">
         <header className="pt-det-header-top-box">
           {/* top controls */}
           <div className="pt-det-header-controls">
-            <div className="pt-det-ctrl-top pt-det-back-btn"></div>
-            <a href="https://en.wikipedia.org/wiki/Calcium" rel="noreferrer" target="_blank">
+            <div className="pt-det-ctrl-top pt-det-back-btn"
+              onClick={handleClose}
+            ></div>
+            <a href={moreURL} rel="noreferrer" target="_blank">
               <div className="pt-det-ctrl-top pt-det-wiki-btn"></div>
             </a>
           </div>
@@ -21,10 +28,10 @@ function PTDetailHeader() {
             <div className="pt-det-header-element-tag">
               <div className="flex-row">
                 <div className="pt-det-header-atomic-no">
-                  20
+                  {atomicNo}
                 </div>
                 <div className="pt-det-header-categoy-name">
-                  Alkaline Earth Metals
+                  {category}
                 </div>
               </div>
             </div>
@@ -32,14 +39,14 @@ function PTDetailHeader() {
             {/* element name */}
             <div className="pt-det-header-element flex-row">
               <div className="pt-det-header-symbol">
-                Ca
+                {symbol}
               </div>
               <div className="pt-det-header-element-name-box">
                 <div className="pt-det-header-name">
-                Praseodymium
+                {name}
                 </div>
                 <div className="pt-det-header-weight">
-                  40.078(g/mol)
+                  {atomicMass}(g/mol)
                 </div>
               </div>
               <div className="pt-det-header-expand"></div>
@@ -51,12 +58,12 @@ function PTDetailHeader() {
         <footer className="pt-det-header-footer flex-row">
           {/* prev */}
           <div className="pt-det-nav-btn pt-prev-btn">
-            <div>19 &bull; Potassium</div>
+            <div>{prevAtomicNo} &bull; {prevName}</div>
           </div>
 
           {/* next */}
           <div className="pt-det-nav-btn pt-next-btn">
-            <div>Scandium &bull; 21</div>
+            <div>{nextName} &bull; {nextAtomicNo}</div>
           </div>
         </footer>
       </div>

@@ -47,7 +47,6 @@
   position: absolute;
   top: 7%;
   left: 230px;
-  z-index: 5;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 12px;
