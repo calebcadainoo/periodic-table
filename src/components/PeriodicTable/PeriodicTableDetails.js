@@ -10,6 +10,7 @@ import PTDetailLabel from '../PTDetailComponents/PTDetailLabel'
 import PTDetailValue from '../PTDetailComponents/PTDetailValue'
 import Modal from 'react-modal'
 import { actionTypes } from '../../context-api/reducer'
+import Slide from 'react-reveal/Slide'
 
 
 function PeriodicTableModalDetails(props) {
@@ -54,6 +55,7 @@ function PeriodicTableModalDetails(props) {
 	
 
   return (
+		<Slide bottom cascade>
     <Modal overlayClassName="pt-detail-container"
 			className="pt-det-holder"
 			isOpen={periodicDetails}
@@ -66,40 +68,43 @@ function PeriodicTableModalDetails(props) {
       <aside>
 				<section className="pt-det-holder">
 					<PTDetailHeader />
-					<footer className="pt-det-footer-box">
-						{/* label */}
-						<PTDetailLabel image={OverviewImage} label="Overview" />
-						<PTDetailValue label="Name: " value={element?.name} />
-						<PTDetailValue label="Summary: " value={element?.summary} />
-						<PTDetailValue label="Discovered by: " value={element?.discovered_by} />
-						<PTDetailValue label="Named by: " value={processNull(element?.named_by)} />
-						<PTDetailValue label="Appearance: " value={processNull(element?.appearance)} />
-						<PTDetailValue label="Electron Shells: " value={ shellsArray(element?.shells) } />
-						<PTDetailValue label="Color: " value={processNull(element?.color)} />
-						{/* label */}
-						<PTDetailLabel image={PropertiesImage} label="Properties" />
-						<PTDetailValue label="Atomic Number: " value={element?.number} />
-						<PTDetailValue label="Atomic Mass: " value={`${element?.atomic_mass} (g/mol)`} />
-						<PTDetailValue label="Density: " value={`${element?.density} (g/cm³)`} />
-						<PTDetailValue label="Phase: " value={element?.phase} />
-						<PTDetailValue label="Melting Point: " value={calculateTempEquivs(element?.melt)} />
-						<PTDetailValue label="Boiling Point: " value={calculateTempEquivs(element?.boil)} />
-						<PTDetailValue label="Molar Heat: " value={`${element?.molar_heat} J/(mol·K)`} />
-						<PTDetailValue label="Group: " value={element?.xpos} />
-						<PTDetailValue label="Period: " value={element?.ypos} />
-						<PTDetailValue label="Emmision spectrum: " value={element?.spectral_img} />
-						{/* label */}
-						<PTDetailLabel image={AtomicPropertiesImage} label="Atomic Properties" />
-						<PTDetailValue label="Electron Configuration: " value={element?.electron_configuration} />
-						{/* label */}
-						<PTDetailLabel image={ReactivityImage} label="Reactivity" />
-						<PTDetailValue label="Electronegativity Pauling: " value={element?.electronegativity_pauling} />
-						<PTDetailValue label="Electron Affinity: " value={`${element?.electron_affinity} kJ/mol`} />
-					</footer>
+					<Slide bottom cascade>
+						<footer className="pt-det-footer-box">
+							{/* label */}
+							<PTDetailLabel image={OverviewImage} label="Overview" />
+							<PTDetailValue label="Name: " value={element?.name} />
+							<PTDetailValue label="Summary: " value={element?.summary} />
+							<PTDetailValue label="Discovered by: " value={element?.discovered_by} />
+							<PTDetailValue label="Named by: " value={processNull(element?.named_by)} />
+							<PTDetailValue label="Appearance: " value={processNull(element?.appearance)} />
+							<PTDetailValue label="Electron Shells: " value={ shellsArray(element?.shells) } />
+							<PTDetailValue label="Color: " value={processNull(element?.color)} />
+							{/* label */}
+							<PTDetailLabel image={PropertiesImage} label="Properties" />
+							<PTDetailValue label="Atomic Number: " value={element?.number} />
+							<PTDetailValue label="Atomic Mass: " value={`${element?.atomic_mass} (g/mol)`} />
+							<PTDetailValue label="Density: " value={`${element?.density} (g/cm³)`} />
+							<PTDetailValue label="Phase: " value={element?.phase} />
+							<PTDetailValue label="Melting Point: " value={calculateTempEquivs(element?.melt)} />
+							<PTDetailValue label="Boiling Point: " value={calculateTempEquivs(element?.boil)} />
+							<PTDetailValue label="Molar Heat: " value={`${element?.molar_heat} J/(mol·K)`} />
+							<PTDetailValue label="Group: " value={element?.xpos} />
+							<PTDetailValue label="Period: " value={element?.ypos} />
+							<PTDetailValue label="Emmision spectrum: " value={element?.spectral_img} />
+							{/* label */}
+							<PTDetailLabel image={AtomicPropertiesImage} label="Atomic Properties" />
+							<PTDetailValue label="Electron Configuration: " value={element?.electron_configuration} />
+							{/* label */}
+							<PTDetailLabel image={ReactivityImage} label="Reactivity" />
+							<PTDetailValue label="Electronegativity Pauling: " value={element?.electronegativity_pauling} />
+							<PTDetailValue label="Electron Affinity: " value={`${element?.electron_affinity} kJ/mol`} />
+						</footer>
+					</Slide>
 				</section>
 				<div className="minimal-space"></div>
 			</aside>
     </Modal>
+		</Slide>
   )
 }
 
