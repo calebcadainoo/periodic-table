@@ -4,7 +4,8 @@ import { useDataLayerValue } from '../../context-api/DataLayer'
 import { actionTypes } from '../../context-api/reducer'
 
 function PTDetailHeader({onBackClick, atomicNo, category, categoryColor, symbol, name, atomicMass, picture, moreURL, prevAtomicNo, prevName, nextAtomicNo, nextName}) {
-  const[{}, dispatch] = useDataLayerValue()
+  const[{ colorMap, periodicSelectedElement }, dispatch] = useDataLayerValue()
+  const element = periodicSelectedElement
   // close modal
   const handleClose = () => {
     dispatch({
@@ -12,6 +13,7 @@ function PTDetailHeader({onBackClick, atomicNo, category, categoryColor, symbol,
 			periodicDetails: false
 		})
   }
+  
 
   return (
     <header className="pt-det-header">
@@ -24,7 +26,7 @@ function PTDetailHeader({onBackClick, atomicNo, category, categoryColor, symbol,
             <div className="pt-det-ctrl-top pt-det-back-btn"
               onClick={handleClose}
             ></div>
-            <a href={moreURL} rel="noreferrer" target="_blank">
+            <a href={element?.source} rel="noreferrer" target="_blank">
               <div className="pt-det-ctrl-top pt-det-wiki-btn"></div>
             </a>
           </div>
@@ -32,13 +34,13 @@ function PTDetailHeader({onBackClick, atomicNo, category, categoryColor, symbol,
           {/* other info */}
           <div className="pt-det-header-top">
             {/* element tag */}
-            <div className="pt-det-header-element-tag">
+            <div className="pt-det-header-element-tag" style={{ background: colorMap[element?.category] }}>
               <div className="flex-row">
                 <div className="pt-det-header-atomic-no">
-                  {atomicNo}
+                  {element?.number}
                 </div>
                 <div className="pt-det-header-categoy-name">
-                  {category}
+                  {element?.category}
                 </div>
               </div>
             </div>
@@ -46,14 +48,14 @@ function PTDetailHeader({onBackClick, atomicNo, category, categoryColor, symbol,
             {/* element name */}
             <div className="pt-det-header-element flex-row">
               <div className="pt-det-header-symbol">
-                {symbol}
+                {element?.symbol}
               </div>
               <div className="pt-det-header-element-name-box">
                 <div className="pt-det-header-name">
-                {name}
+                {element?.name}
                 </div>
                 <div className="pt-det-header-weight">
-                  {atomicMass}(g/mol)
+                  {element?.atomic_mass}(g/mol)
                 </div>
               </div>
               <div className="pt-det-header-expand"></div>

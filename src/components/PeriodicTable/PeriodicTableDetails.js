@@ -13,7 +13,8 @@ import { actionTypes } from '../../context-api/reducer'
 
 
 function PeriodicTableModalDetails(props) {
-  const[{ periodicDetails }, dispatch] = useDataLayerValue()
+  const[{ periodicDetails, periodicSelectedElement }, dispatch] = useDataLayerValue()
+	const element = periodicSelectedElement
   // console.log(periodicTable)
 
 	const [isModalOpen, setIsModalOpen] = useState(periodicDetails)
@@ -24,6 +25,20 @@ function PeriodicTableModalDetails(props) {
 			periodicDetails: boolVal
 		})
 	}
+
+  const processNull = (value) => {
+    return (value === null) ? '--' : value
+  }
+
+	const calculateTempEquivs = (value) => {
+		const kelvin = value
+		// 1K − 273.15 = -272.1°C
+		const celsius = kelvin - 273.15
+		const fahrenheit = (celsius * 9/5) + 32
+		const temp = `${kelvin}K = ${celsius}°C = ${fahrenheit}°F`
+    return temp
+  }
+	
 
   return (
     <Modal overlayClassName="pt-detail-container"
@@ -37,57 +52,38 @@ function PeriodicTableModalDetails(props) {
 		>
       <aside>
 				<section className="pt-det-holder">
-					<PTDetailHeader atomicNo="20"
-						category="Alkaline Earth Metals"
-						categoryColor=""
-						symbol="Ca"
-						name="Calcium"
-						atomicMass="40.078"
-						picture="https://www.thoughtco.com/thmb/SuB85Nf5V3SIlFjQCq5Jnt4E-hM=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/Calcium-58efae5f5f9b582c4d2d340f.jpg"
-						moreURL="https://en.wikipedia.org/wiki/Calcium"
-						prevAtomicNo="19"
-						prevName="Potassium"
-						nextAtomicNo="21"
-						nextName="Scandium"
-						onBackClick={setIsModalOpen}
-					/>
-
+					<PTDetailHeader />
 					<footer className="pt-det-footer-box">
 						{/* label */}
 						<PTDetailLabel image={OverviewImage} label="Overview" />
-						<PTDetailValue label="Name: " value="Calcium" />
-						<PTDetailValue label="Summary: " value="
-							Calcium is a chemical element with symbol Ca and 
-							atomic number 20. Calcium is a soft gray 
-							alkaline earth metal, fifth-most-abundant element by 
-							mass in the Earth's crust. The ion Ca2+ is also the 
-							fifth-most-abundant dissolved ion in seawater by both 
-							molarity and mass, after sodium, chloride, magnesium, and sulfate.
-						" />
-						<PTDetailValue label="Discovered by: " value="Humphry Davy" />
-						<PTDetailValue label="Named by: " value="--" />
-						<PTDetailValue label="Appearance: " value="--" />
-						<PTDetailValue label="Electron Shells: " value="K2, L8, M8, N2" />
-						<PTDetailValue label="Color: " value="--" />
+						<PTDetailValue label="Name: " value={element?.name} />
+						<PTDetailValue label="Summary: " value={element?.summary} />
+						<PTDetailValue label="Discovered by: " value={element?.discovered_by} />
+						<PTDetailValue label="Named by: " value={processNull(element?.named_by)} />
+						<PTDetailValue label="Appearance: " value={processNull(element?.appearance)} />
+						<PTDetailValue label="Electron Shells: " value={
+							console.log(element?.shells)
+						} />
+						<PTDetailValue label="Color: " value={processNull(element?.color)} />
 						{/* label */}
 						<PTDetailLabel image={PropertiesImage} label="Properties" />
-						<PTDetailValue label="Atomic Number: " value="20" />
-						<PTDetailValue label="Atomic Weight: " value="40.078(g/mol)" />
+						<PTDetailValue label="Atomic Number: " value={element?.number} />
+						<PTDetailValue label="Atomic Mass: " value={`${element?.atomic_mass} (g/mol)`} />
 						<PTDetailValue label="Density: " value="1.55(g/cm <sup>3</sup>)" />
-						<PTDetailValue label="Phase: " value="Solid" />
-						<PTDetailValue label="Melting Point: " value="1115K" />
-						<PTDetailValue label="Boiling Point: " value="1757K" />
-						<PTDetailValue label="Molar Heat: " value="25.929 J/(mol·K)" />
-						<PTDetailValue label="Group: " value="2" />
-						<PTDetailValue label="Period: " value="4" />
+						<PTDetailValue label="Phase: " value={element?.phase} />
+						<PTDetailValue label="Melting Point: " value={calculateTempEquivs(element?.melt)} />
+						<PTDetailValue label="Boiling Point: " value={calculateTempEquivs(element?.boil)} />
+						<PTDetailValue label="Molar Heat: " value={`${element?.molar_heat} J/(mol·K)`} />
+						<PTDetailValue label="Group: " value={element?.xpos} />
+						<PTDetailValue label="Period: " value={element?.ypos} />
 						<PTDetailValue label="Emmision spectrum: " value="image here" />
 						{/* label */}
 						<PTDetailLabel image={AtomicPropertiesImage} label="Atomic Properties" />
-						<PTDetailValue label="Electron Configuration: " value="1s2 2s2 2p6 3s2 3p6 4s2" />
+						<PTDetailValue label="Electron Configuration: " value={element?.electron_configuration} />
 						{/* label */}
 						<PTDetailLabel image={ReactivityImage} label="Reactivity" />
-						<PTDetailValue label="Electronegativity Pauling: " value="1.00" />
-						<PTDetailValue label="Electron Affinity: " value="2.37 kJ/mol" />
+						<PTDetailValue label="Electronegativity Pauling: " value={element?.electronegativity_pauling} />
+						<PTDetailValue label="Electron Affinity: " value={`${element?.electron_affinity} kJ/mol`} />
 					</footer>
 				</section>
 				<div className="minimal-space"></div>

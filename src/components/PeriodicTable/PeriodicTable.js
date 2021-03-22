@@ -6,7 +6,7 @@ import { actionTypes } from '../../context-api/reducer'
 // import PeriodicTableDetails from './PeriodicTableDetails'
 
 function PeriodicTable() {
-	const [{ periodicTable, periodicDetails, periodicSelectedElement }, dispatch] = useDataLayerValue()
+	const [{ periodicTable }, dispatch] = useDataLayerValue()
 	const [{colorMap}] = useDataLayerValue()
 	const [{periodicElOpacity}] = useDataLayerValue()
   const data = periodicTable
@@ -31,7 +31,6 @@ function PeriodicTable() {
 		})
 
 		console.log('CLICKED ATOMIC No: ', atomicNo)
-		console.log('NOW Element: ', periodicSelectedElement)
 
 	}
 	
