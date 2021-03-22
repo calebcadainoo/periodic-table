@@ -31,7 +31,6 @@ function PeriodicTable() {
 		})
 
 		console.log('CLICKED ATOMIC No: ', atomicNo)
-
 	}
 	
 
