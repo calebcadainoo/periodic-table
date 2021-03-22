@@ -29,8 +29,6 @@ function PeriodicTable() {
 			type: actionTypes.SET_SELECTED_ELEMENT,
 			periodicSelectedElement: selectedElement 
 		})
-
-		console.log('CLICKED ATOMIC No: ', atomicNo)
 	}
 	
 

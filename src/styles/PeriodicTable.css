@@ -15,6 +15,7 @@
     text-align: center;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
   }
   
   .element-atomic-no{

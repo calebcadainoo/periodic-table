@@ -47,8 +47,7 @@ function PeriodicTableModalDetails(props) {
 	const shellsArray = (arrVal) => {
 		let shells = ''
     arrVal?.map((orbital) => {
-			console.log(`${orbital} shell`)
-			shells += `${orbital} `
+			return shells += `${orbital} `
 		})
 		return shells
   }
