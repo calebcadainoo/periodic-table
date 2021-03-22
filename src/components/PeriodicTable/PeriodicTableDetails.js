@@ -87,7 +87,7 @@ function PeriodicTableModalDetails(props) {
 						<PTDetailValue label="Molar Heat: " value={`${element?.molar_heat} J/(mol·K)`} />
 						<PTDetailValue label="Group: " value={element?.xpos} />
 						<PTDetailValue label="Period: " value={element?.ypos} />
-						<PTDetailValue label="Emmision spectrum: " value={console.log(element?.spectral_img)} />
+						<PTDetailValue label="Emmision spectrum: " value={element?.spectral_img} />
 						{/* label */}
 						<PTDetailLabel image={AtomicPropertiesImage} label="Atomic Properties" />
 						<PTDetailValue label="Electron Configuration: " value={element?.electron_configuration} />
