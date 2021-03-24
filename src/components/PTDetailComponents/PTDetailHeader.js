@@ -4,7 +4,7 @@ import { useDataLayerValue } from '../../context-api/DataLayer'
 import { actionTypes } from '../../context-api/reducer'
 import Fade from 'react-reveal/Fade'
 
-function PTDetailHeader({onBackClick, atomicNo, category, categoryColor, symbol, name, atomicMass, picture, moreURL, prevAtomicNo, prevName, nextAtomicNo, nextName}) {
+function PTDetailHeader() {
   const[{ colorMap, periodicSelectedElement }, dispatch] = useDataLayerValue()
   const element = periodicSelectedElement
   // close modal
@@ -15,12 +15,16 @@ function PTDetailHeader({onBackClick, atomicNo, category, categoryColor, symbol,
 		})
   }
   
+  let prevAtomicNo, prevName, nextName, nextAtomicNo
 
   return (
     <div>
       <Fade bottom cascade>
     <header className="pt-det-header">
-      <img className="pt-det-header-img" src={picture} alt={name}/>
+      <img className="pt-det-header-img" 
+        src="https://www.thoughtco.com/thmb/SuB85Nf5V3SIlFjQCq5Jnt4E-hM=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/Calcium-58efae5f5f9b582c4d2d340f.jpg" 
+        alt={element?.name}
+      />
       {/* top */}
       <div className="pt-det-header-inner">
         <header className="pt-det-header-top-box">
