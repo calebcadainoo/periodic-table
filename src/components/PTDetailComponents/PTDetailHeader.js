@@ -22,21 +22,27 @@ function PTDetailHeader() {
 	}
 
   // set prev element 
-  prevAtomicNo = parseInt(element?.number - 1)
-  prevName = elementType(prevAtomicNo)?.name
+  if (element?.number - 1 > 0 && element?.number - 1 < 120) {
+		prevAtomicNo = parseInt(element?.number - 1)
+  	prevName = elementType(prevAtomicNo)?.name
+	}
 
   // set next element
-  nextAtomicNo = parseInt(element?.number + 1)
-  nextName = elementType(nextAtomicNo)?.name
+  if (element?.number + 1 > 0 && element?.number + 1 < 120) {
+		nextAtomicNo = parseInt(element?.number + 1)
+  	nextName = elementType(nextAtomicNo)?.name
+	}
 
 	// element navigation logic
   const setNavElement = (atomNum) => {
-		const selected = elementType(atomNum)
+		if (atomNum > 0 && atomNum < 120) {
+			const selected = elementType(atomNum)
 
-		dispatch({
-			type: actionTypes.SET_SELECTED_ELEMENT,
-			periodicSelectedElement: selected 
-		})
+			dispatch({
+				type: actionTypes.SET_SELECTED_ELEMENT,
+				periodicSelectedElement: selected 
+			})
+		}
 	}
 
 
