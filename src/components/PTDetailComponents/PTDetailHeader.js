@@ -17,15 +17,28 @@ function PTDetailHeader() {
   
   let prevAtomicNo, prevName, nextName, nextAtomicNo
 
+	function elementType(number) {
+		return  periodicTable.filter((element) => element.number === number)[0]
+	}
+
   // set prev element 
   prevAtomicNo = parseInt(element?.number - 1)
-  prevName = periodicTable[prevAtomicNo]?.name
+  prevName = elementType(prevAtomicNo)?.name
 
   // set next element
   nextAtomicNo = parseInt(element?.number + 1)
-  nextName = periodicTable[nextAtomicNo]?.name
+  nextName = elementType(nextAtomicNo)?.name
 
-  console.log('PREV ATOM: ', periodicTable[prevAtomicNo])
+	// element navigation logic
+  const setNavElement = (atomNum) => {
+		const selected = elementType(atomNum)
+
+		dispatch({
+			type: actionTypes.SET_SELECTED_ELEMENT,
+			periodicSelectedElement: selected 
+		})
+	}
+
 
 
   return (
@@ -84,12 +97,12 @@ function PTDetailHeader() {
         {/* footer */}
         <footer className="pt-det-header-footer flex-row">
           {/* prev */}
-          <div className="pt-det-nav-btn pt-prev-btn">
+          <div onClick={() => setNavElement(prevAtomicNo)} className="pt-det-nav-btn pt-prev-btn">
             <div>{prevAtomicNo} &bull; {prevName}</div>
           </div>
 
           {/* next */}
-          <div className="pt-det-nav-btn pt-next-btn">
+          <div onClick={() => setNavElement(nextAtomicNo)} className="pt-det-nav-btn pt-next-btn">
             <div>{nextName} &bull; {nextAtomicNo}</div>
           </div>
         </footer>
