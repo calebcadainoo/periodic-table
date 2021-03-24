@@ -5,7 +5,7 @@ import { actionTypes } from '../../context-api/reducer'
 import Fade from 'react-reveal/Fade'
 
 function PTDetailHeader() {
-  const[{ colorMap, periodicSelectedElement }, dispatch] = useDataLayerValue()
+  const[{ periodicTable, colorMap, periodicSelectedElement }, dispatch] = useDataLayerValue()
   const element = periodicSelectedElement
   // close modal
   const handleClose = () => {
@@ -16,6 +16,17 @@ function PTDetailHeader() {
   }
   
   let prevAtomicNo, prevName, nextName, nextAtomicNo
+
+  // set prev element 
+  prevAtomicNo = parseInt(element?.number - 1)
+  prevName = periodicTable[prevAtomicNo]?.name
+
+  // set next element
+  nextAtomicNo = parseInt(element?.number + 1)
+  nextName = periodicTable[nextAtomicNo]?.name
+
+  console.log('PREV ATOM: ', periodicTable[prevAtomicNo])
+
 
   return (
     <div>
