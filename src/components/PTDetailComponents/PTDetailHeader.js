@@ -2,6 +2,7 @@
 import React from 'react'
 import { useDataLayerValue } from '../../context-api/DataLayer'
 import { actionTypes } from '../../context-api/reducer'
+import Fade from 'react-reveal/Fade'
 
 function PTDetailHeader({onBackClick, atomicNo, category, categoryColor, symbol, name, atomicMass, picture, moreURL, prevAtomicNo, prevName, nextAtomicNo, nextName}) {
   const[{ colorMap, periodicSelectedElement }, dispatch] = useDataLayerValue()
@@ -16,6 +17,8 @@ function PTDetailHeader({onBackClick, atomicNo, category, categoryColor, symbol,
   
 
   return (
+    <div>
+      <Fade bottom cascade>
     <header className="pt-det-header">
       <img className="pt-det-header-img" src={picture} alt={name}/>
       {/* top */}
@@ -77,6 +80,8 @@ function PTDetailHeader({onBackClick, atomicNo, category, categoryColor, symbol,
         </footer>
       </div>
     </header>
+    </Fade>
+    </div>
   )
 }
 

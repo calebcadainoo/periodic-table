@@ -10,7 +10,7 @@ import PTDetailLabel from '../PTDetailComponents/PTDetailLabel'
 import PTDetailValue from '../PTDetailComponents/PTDetailValue'
 import Modal from 'react-modal'
 import { actionTypes } from '../../context-api/reducer'
-import Slide from 'react-reveal/Slide'
+import Fade from 'react-reveal/Fade'
 
 
 function PeriodicTableModalDetails(props) {
@@ -54,7 +54,6 @@ function PeriodicTableModalDetails(props) {
 	
 
   return (
-		<Slide bottom cascade>
     <Modal overlayClassName="pt-detail-container"
 			className="pt-det-holder"
 			isOpen={periodicDetails}
@@ -64,10 +63,12 @@ function PeriodicTableModalDetails(props) {
 				closeDetailsModal(isModalOpen)
 			}}
 		>
-      <aside>
+      <Fade>
 				<section className="pt-det-holder">
-					<PTDetailHeader />
-					<Slide bottom cascade>
+					<Fade bottom delay={100}>
+						<PTDetailHeader />
+						</Fade>
+					<Fade bottom cascade delay={500}><div>
 						<footer className="pt-det-footer-box">
 							{/* label */}
 							<PTDetailLabel image={OverviewImage} label="Overview" />
@@ -98,12 +99,11 @@ function PeriodicTableModalDetails(props) {
 							<PTDetailValue label="Electronegativity Pauling: " value={element?.electronegativity_pauling} />
 							<PTDetailValue label="Electron Affinity: " value={`${element?.electron_affinity} kJ/mol`} />
 						</footer>
-					</Slide>
+						</div></Fade>
 				</section>
 				<div className="minimal-space"></div>
-			</aside>
+			</Fade>
     </Modal>
-		</Slide>
   )
 }
 

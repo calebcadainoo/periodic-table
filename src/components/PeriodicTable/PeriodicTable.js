@@ -2,7 +2,7 @@ import React from 'react'
 import '../../styles/PeriodicTable.css'
 import { useDataLayerValue } from '../../context-api/DataLayer'
 import { actionTypes } from '../../context-api/reducer'
-// import PeriodicTableModalDetails from './PeriodicTableModalDetails'
+import Reveal from 'react-reveal/Reveal'
 // import PeriodicTableDetails from './PeriodicTableDetails'
 
 function PeriodicTable() {
@@ -33,7 +33,8 @@ function PeriodicTable() {
 	
 
   return (
-    <div className="periodic-table">
+		<Reveal effect="fadeInUp" >
+		<div className="periodic-table">
       {data.map((element) =>(
           <aside onClick={() => handleElementClick(element.number)} 
 						key={element.name} 
@@ -51,6 +52,7 @@ function PeriodicTable() {
           </aside>
         ))}
     </div>
+		</Reveal>
   )
 }
 
