@@ -3,11 +3,13 @@ import React from 'react'
 import { useDataLayerValue } from '../../context-api/DataLayer'
 import { actionTypes } from '../../context-api/reducer'
 import Fade from 'react-reveal/Fade'
+import history from 'element-histories'
 
 function PTDetailHeader() {
   const[{ periodicTable, colorMap, periodicSelectedElement }, dispatch] = useDataLayerValue()
   const element = periodicSelectedElement
-  // close modal
+
+  // CLOSE MODAL
   const handleClose = () => {
     dispatch({
 			type: actionTypes.SET_DETAILS_MODAL,
@@ -21,19 +23,19 @@ function PTDetailHeader() {
 		return  periodicTable.filter((element) => element.number === number)[0]
 	}
 
-  // set prev element 
+  // SET PREV ELEMENT
   if (element?.number - 1 > 0 && element?.number - 1 < 120) {
 		prevAtomicNo = parseInt(element?.number - 1)
   	prevName = elementType(prevAtomicNo)?.name
 	}
 
-  // set next element
+  // SET NEXT ELEMENT
   if (element?.number + 1 > 0 && element?.number + 1 < 120) {
 		nextAtomicNo = parseInt(element?.number + 1)
   	nextName = elementType(nextAtomicNo)?.name
 	}
 
-	// element navigation logic
+	// ELEMENT NAVIGATION LOGIC
   const setNavElement = (atomNum) => {
 		if (atomNum > 0 && atomNum < 120) {
 			const selected = elementType(atomNum)
@@ -45,14 +47,20 @@ function PTDetailHeader() {
 		}
 	}
 
-
+  let imageName = element?.name
+  if (imageName === 'Aluminium') imageName = 'Aluminum'
+  if (imageName === 'Nihonium') imageName = 'Ununtrium'
+  if (imageName === 'Moscovium') imageName = 'Ununpentium'
+  if (imageName === 'Tennessine') imageName = 'Ununseptium'
+  if (imageName === 'Oganesson') imageName = 'Ununoctium'
+  if (imageName === 'Ununennium') imageName = 'Ununoctium'
 
   return (
     <div>
       <Fade bottom cascade>
     <header className="pt-det-header">
       <img className="pt-det-header-img" 
-        src="https://www.thoughtco.com/thmb/SuB85Nf5V3SIlFjQCq5Jnt4E-hM=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/Calcium-58efae5f5f9b582c4d2d340f.jpg" 
+        src={history?.image(imageName)}
         alt={element?.name}
       />
       {/* top */}
