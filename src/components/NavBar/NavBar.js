@@ -1,14 +1,33 @@
 import React, { useState } from 'react'
 import '../../styles/NavBar.css'
 import SearchIcon from '../../ico/search.svg'
+import { useDataLayerValue } from '../../context-api/DataLayer'
+import { actionTypes } from '../../context-api/reducer'
 
 function NavBar() {
-  const [menuSearchText, setMenuSearchText] = useState('')
+  const[{ periodicTable, periodicSearch }, dispatch] = useDataLayerValue()
   const [menuSearchBarOpen, setMenuSearchBarOpen] = useState('hidebx')
   const [menuSearchIcon, setMenuSearchIcon] = useState('')
-  const handleMenuSearchText = () => {
+  // const handleMenuSearchText = () => {
 
-  }
+  // }
+
+  // SEARCH UI TOGGGLE
+  let menuSearchUI = "hidebx"
+	const toggleSearchUI = () => {
+		if (periodicSearch === "hidebx") {
+			dispatch({
+				type: actionTypes.SEARCH_UI_TOGGLE,
+				periodicSearch: "" 
+			})
+		} else {
+			dispatch({
+				type: actionTypes.SEARCH_UI_TOGGLE,
+				periodicSearch: "hidebx" 
+			})
+		}
+    console.log(menuSearchUI)
+	}
 
   const handleSearchBarOpen = () => {
     (menuSearchBarOpen === 'hidebx') ? setMenuSearchBarOpen('') : setMenuSearchBarOpen('hidebx')
@@ -25,7 +44,7 @@ function NavBar() {
       setMenuOpen(false)
       setMenuCloseClass('')
     }
-    handleSearchBarOpen()
+    toggleSearchUI()
   }
 
   return (

@@ -18,6 +18,7 @@ export const initialState = {
 	periodicElOpacity: 1,
 	periodicDetails: false,
 	periodicSelectedElement: undefined,
+	periodicSearch: "hidebx",
 }
 
 export const actionTypes = {
@@ -27,9 +28,11 @@ export const actionTypes = {
 	SET_PERIODIC_EL_OPACITY: 'SET_PERIODIC_EL_OPACITY',
 	SET_DETAILS_MODAL: 'SET_DETAILS_MODAL',
 	SET_SELECTED_ELEMENT: 'SET_SELECTED_ELEMENT',
+	SEARCH_UI_TOGGLE: 'SEARCH_UI_TOGGLE',
 }
 
 const reducer = (state, action) => {
+	console.log(action)
 
 	switch (action.type) {
 		case actionTypes.SET_USER:
@@ -61,6 +64,11 @@ const reducer = (state, action) => {
 			return {
 				...state,
 				periodicSelectedElement: action.periodicSelectedElement,
+			}
+		case actionTypes.SEARCH_UI_TOGGLE:
+			return {
+				...state,
+				periodicSearch: action.periodicSearch,
 			}
 		default:
 			return state
