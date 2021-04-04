@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import '../../styles/NavBar.css'
 import SearchIcon from '../../ico/search.svg'
 import { useDataLayerValue } from '../../context-api/DataLayer'
 import { actionTypes } from '../../context-api/reducer'
+import NavBarSearch from './NavBarSearch'
 
 function NavBar() {
   const[{ periodicTable, periodicSearch }, dispatch] = useDataLayerValue()
@@ -12,46 +13,42 @@ function NavBar() {
 
   // }
 
-  // SEARCH UI TOGGGLE
-	const toggleSearchUI = () => {
-		if (periodicSearch === "hidebx") {
-			dispatch({
-				type: actionTypes.SEARCH_UI_TOGGLE,
-				periodicSearch: "" 
-			})
-		} else {
-			dispatch({
-				type: actionTypes.SEARCH_UI_TOGGLE,
-				periodicSearch: "hidebx" 
-			})
-		}
-	}
-
   const [menuOpen, setMenuOpen] = useState(false)
   const [menuCloseClass, setMenuCloseClass] = useState('')
+
   const handleMenuState = () => {
     if (menuOpen === false) {
       setMenuOpen(true)
       setMenuCloseClass('menu-tapped')
+      dispatch({
+				type: actionTypes.SEARCH_UI_TOGGLE,
+				periodicSearch: "" 
+			})
     } else {
       setMenuOpen(false)
       setMenuCloseClass('')
+      dispatch({
+				type: actionTypes.SEARCH_UI_TOGGLE,
+				periodicSearch: "hidebx" 
+			})
     }
-    toggleSearchUI()
   }
 
   return (
-    <nav className="navbar">
-      <div onClick={handleMenuState} className={`navbar-item navbar-menu ${menuCloseClass}`}>
-        <div className="middle"></div>
-      </div>
-      <div className="navbar-item navbar-name">
-        Periodic Table
-      </div>
-      <div className="navbar-item navbar-search-holder">
-        <img className={`navbar-item navbar-search ${menuSearchIcon}`} src={SearchIcon} alt="search icon"/>
-      </div>
-    </nav>
+    <>
+      <nav className="navbar">
+        <div onClick={handleMenuState} className={`navbar-item navbar-menu ${menuCloseClass}`}>
+          <div className="middle"></div>
+        </div>
+        <div className="navbar-item navbar-name">
+          Periodic Table
+        </div>
+        <div className="navbar-item navbar-search-holder">
+          <img className={`navbar-item navbar-search ${menuSearchIcon}`} src={SearchIcon} alt="search icon"/>
+        </div>
+      </nav>
+      <NavBarSearch func={setMenuCloseClass} />
+    </>
   )
 }
 

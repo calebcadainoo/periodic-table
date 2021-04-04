@@ -5,7 +5,7 @@ import { useDataLayerValue } from '../../context-api/DataLayer'
 import { actionTypes } from '../../context-api/reducer'
 import Modal from 'react-modal'
 
-function NavBarSearch() {
+function NavBarSearch(props) {
 	const[{ periodicTable, periodicSearch }, dispatch] = useDataLayerValue()
 	// sort elements in alphabetical order
 	const elementToAlphabets = periodicTable
@@ -35,9 +35,10 @@ function NavBarSearch() {
 			case "hidebx":
 				setIsModalOpen(false)
 				break;
-		
-			default:
-				setIsModalOpen(true)
+				
+				default:
+					setIsModalOpen(true)
+					props.func('')
 				break;
 		}
 	}
