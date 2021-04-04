@@ -1,7 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect } from 'react'
+import React, { useState } from 'react'
 import NavBarElementTab from './NavBarElementTab'
 import { useDataLayerValue } from '../../context-api/DataLayer'
+import { actionTypes } from '../../context-api/reducer'
+import Modal from 'react-modal'
 
 function NavBarSearch() {
 	const[{ periodicTable, periodicSearch }, dispatch] = useDataLayerValue()
@@ -28,9 +30,37 @@ function NavBarSearch() {
 		// })
 	}
 
+	const searchModalState = (value) => {
+		switch (value) {
+			case "hidebx":
+				setIsModalOpen(false)
+				break;
+		
+			default:
+				setIsModalOpen(true)
+				break;
+		}
+	}
+
+	const [isModalOpen, setIsModalOpen] = useState(true)
+	const closeDetailsModal = (value) => {
+		searchModalState(value)
+		dispatch({
+			type: actionTypes.SEARCH_UI_TOGGLE,
+			periodicSearch: "hidebx"
+		})
+	}
+
 	return (
-		<section className={`navbar-search-container ${periodicSearch}`}>
-			<div className="navbar-search-inner flex-row">
+		<Modal overlayClassName={`navbar-search-container ${periodicSearch}`}
+		className="navbar-search-inner flex-row"
+		isOpen={isModalOpen}
+		shouldCloseOnOverlayClick={true}
+		onRequestClose={() => {
+			closeDetailsModal(periodicSearch)
+		}}
+		>
+			{/* <div className="navbar-search-inner flex-row"> */}
 				<input type="text" 
 					onChange={handleMenuSearchText}
 					className={`navbar-search-txtbox navbar-item`} 
@@ -43,8 +73,8 @@ function NavBarSearch() {
 						})}
 					</section>
 				</aside>
-			</div>
-		</section>
+			{/* </div> */}
+		</Modal>
 	)
 }
 

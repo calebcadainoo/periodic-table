@@ -6,14 +6,13 @@ import { actionTypes } from '../../context-api/reducer'
 
 function NavBar() {
   const[{ periodicTable, periodicSearch }, dispatch] = useDataLayerValue()
-  const [menuSearchBarOpen, setMenuSearchBarOpen] = useState('hidebx')
+  const [menuAboutDev, setMenuAboutDev] = useState()
   const [menuSearchIcon, setMenuSearchIcon] = useState('')
   // const handleMenuSearchText = () => {
 
   // }
 
   // SEARCH UI TOGGGLE
-  let menuSearchUI = "hidebx"
 	const toggleSearchUI = () => {
 		if (periodicSearch === "hidebx") {
 			dispatch({
@@ -26,13 +25,7 @@ function NavBar() {
 				periodicSearch: "hidebx" 
 			})
 		}
-    console.log(menuSearchUI)
 	}
-
-  const handleSearchBarOpen = () => {
-    (menuSearchBarOpen === 'hidebx') ? setMenuSearchBarOpen('') : setMenuSearchBarOpen('hidebx')
-
-  }
 
   const [menuOpen, setMenuOpen] = useState(false)
   const [menuCloseClass, setMenuCloseClass] = useState('')
@@ -56,7 +49,7 @@ function NavBar() {
         Periodic Table
       </div>
       <div className="navbar-item navbar-search-holder">
-        <img onClick={handleSearchBarOpen} className={`navbar-item navbar-search ${menuSearchIcon}`} src={SearchIcon} alt="search icon"/>
+        <img className={`navbar-item navbar-search ${menuSearchIcon}`} src={SearchIcon} alt="search icon"/>
       </div>
     </nav>
   )

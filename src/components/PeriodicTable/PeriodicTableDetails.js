@@ -57,7 +57,7 @@ function PeriodicTableModalDetails(props) {
     <Modal overlayClassName="pt-detail-container"
 			className="pt-det-holder"
 			isOpen={periodicDetails}
-			contentLabel={"Calcium Details"}
+			contentLabel={`${element?.name} Details`}
 			shouldCloseOnOverlayClick={true}
 			onRequestClose={() => {
 				closeDetailsModal(isModalOpen)
