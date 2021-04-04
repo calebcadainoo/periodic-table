@@ -36,3 +36,11 @@
 .flex-row {
   display: flex;
 }
+
+.spacerA {
+  height: 30px;
+}
+
+.hidebx {
+  display: none;
+}
