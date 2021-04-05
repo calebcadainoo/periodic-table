@@ -11,23 +11,24 @@ function NavBarSearch(props) {
 	const elementToAlphabets = periodicTable
 	elementToAlphabets.sort((a, b) => a.name.localeCompare(b.name))
 
-	const handleMenuSearchText = () => {
-
+	const handleMenuSearchText = (value) => {
+		console.log(value)
 	}
 
 	const handleNavBarElementTab = (atomicNo) => {
-		// console.log(atomicNo)
-		// const selectedElement = periodicTable.filter((element) => element.number === atomicNo)[0]
+		closeDetailsModal(periodicSearch) // close search modal
+		// set selected element
+		const selectedElement = periodicTable.filter((element) => element.number === atomicNo)[0]
 		
-		// dispatch({
-		// 	type: actionTypes.SET_DETAILS_MODAL,
-		// 	periodicDetails: true
-		// })
+		dispatch({
+			type: actionTypes.SET_DETAILS_MODAL,
+			periodicDetails: true
+		})
 
-		// dispatch({
-		// 	type: actionTypes.SET_SELECTED_ELEMENT,
-		// 	periodicSelectedElement: selectedElement 
-		// })
+		dispatch({
+			type: actionTypes.SET_SELECTED_ELEMENT,
+			periodicSelectedElement: selectedElement 
+		})
 	}
 
 	const searchModalState = (value) => {
@@ -64,14 +65,14 @@ function NavBarSearch(props) {
 		>
 			{/* <div className="navbar-search-inner flex-row"> */}
 				<input type="text" 
-					onChange={handleMenuSearchText}
+					onChange={(e) => handleMenuSearchText(e.target.value)}
 					className={`navbar-search-txtbox navbar-item`} 
 					placeholder="Search element..."
 				/>
 				<aside className="navbar-search-tab-container">
 					<section className="navbar-search-tab-box flex-row">
 						{elementToAlphabets.map((element, keyId) => {
-							return <NavBarElementTab key={keyId} onClick={handleNavBarElementTab(element.number)} element={element} />
+							return <NavBarElementTab key={keyId} bomb={element.number} func={handleNavBarElementTab} element={element} />
 						})}
 					</section>
 				</aside>

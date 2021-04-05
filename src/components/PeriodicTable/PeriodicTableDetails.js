@@ -65,9 +65,7 @@ function PeriodicTableModalDetails(props) {
 		>
       <Fade>
 				<section className="pt-det-holder">
-					<Fade bottom delay={100}>
-						<PTDetailHeader />
-						</Fade>
+					<PTDetailHeader />
 					<Fade bottom cascade delay={500}><div>
 						<footer className="pt-det-footer-box">
 							{/* label */}
@@ -99,7 +97,7 @@ function PeriodicTableModalDetails(props) {
 							<PTDetailValue label="Electronegativity Pauling: " value={element?.electronegativity_pauling} />
 							<PTDetailValue label="Electron Affinity: " value={`${element?.electron_affinity} kJ/mol`} />
 						</footer>
-						</div></Fade>
+					</div></Fade>
 				</section>
 				<div className="minimal-space"></div>
 			</Fade>

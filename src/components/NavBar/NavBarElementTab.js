@@ -1,11 +1,11 @@
 import React from 'react'
 import { useDataLayerValue } from '../../context-api/DataLayer'
 
-function NavBarElementTab({element}) {
+function NavBarElementTab({element, func}) {
 	const [{colorMap}] = useDataLayerValue()
 
 	return (
-		<div className="navbar-search-tab flex-row">
+		<div onClick={() => func(element?.number)} className="navbar-search-tab flex-row">
 			{/* symbol */}
 			<div className="navbar-search-tab-symbol" style={{
 				background: colorMap[element.category],
