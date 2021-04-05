@@ -8,26 +8,25 @@ import { actionTypes } from '../../context-api/reducer'
 import NavBarSearch from './NavBarSearch'
 
 function NavBar() {
-  const[{}, dispatch] = useDataLayerValue()
+  const[{periodicSearch}, dispatch] = useDataLayerValue()
   const [menuSearchIcon, setMenuSearchIcon] = useState('')
-  // const handleMenuSearchText = () => {
-
-  // }
 
   const [menuOpen, setMenuOpen] = useState(false)
   const [menuCloseClass, setMenuCloseClass] = useState('')
+  const [openSearchModal, setOpenSearchModal] = useState(false)
 
   const handleMenuState = () => {
-    if (menuOpen === false) {
+    if (periodicSearch === "hidebx") {
       setMenuOpen(true)
       setMenuCloseClass('menu-tapped')
+      setOpenSearchModal(true) // open search modal
       dispatch({
 				type: actionTypes.SEARCH_UI_TOGGLE,
 				periodicSearch: "" 
 			})
     } else {
       setMenuOpen(false)
-      // setMenuCloseClass('')
+      setOpenSearchModal(false) // close search modal
       dispatch({
 				type: actionTypes.SEARCH_UI_TOGGLE,
 				periodicSearch: "hidebx" 
@@ -48,7 +47,7 @@ function NavBar() {
           <img className={`navbar-item navbar-search ${menuSearchIcon}`} src={SearchIcon} alt="search icon"/>
         </div>
       </nav>
-      <NavBarSearch func={setMenuCloseClass} />
+      <NavBarSearch func={setMenuCloseClass} searchModalVal={openSearchModal} searchModalFunc={setOpenSearchModal} />
     </>
   )
 }

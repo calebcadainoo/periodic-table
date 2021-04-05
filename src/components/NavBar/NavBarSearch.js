@@ -1,19 +1,16 @@
-/* eslint-disable default-case */
-/* eslint-disable no-unused-vars */
-/* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect } from 'react'
-import NavBarElementTab from './NavBarElementTab'
+import React, { useState } from 'react'
+import NavBarSearchElementTab from './NavBarSearchElementTab'
 import { useDataLayerValue } from '../../context-api/DataLayer'
 import { actionTypes } from '../../context-api/reducer'
 import Modal from 'react-modal'
 import Fade from 'react-reveal/Fade'
+import Zoom from 'react-reveal/Zoom'
 
 function NavBarSearch(props) {
 	const[{ periodicTable }] = useDataLayerValue()
 	const[{ periodicSearchList, periodicSearch }, dispatch] = useDataLayerValue()
 	// sort elements in alphabetical order
 	let elementToAlphabets = periodicSearchList
-	// elementToAlphabets.sort((a, b) => a.name.localeCompare(b.name))
 
 	// SORT LOGIC
 	const [byAtomicNumber, setByAtomicNumber] = useState('navbar-sort-type navbar-sort-selected')
@@ -90,20 +87,21 @@ function NavBarSearch(props) {
 	const searchModalState = (value) => {
 		switch (value) {
 			case "hidebx":
-				setIsModalOpen(false)
+				props.searchModalFunc(false)
 				props.func('menu-tapped')
 				break
 				
 			default:
-				setIsModalOpen(true)
+				props.searchModalFunc(true)
 				props.func('')
 			break
 		}
 	}
 
 	// CLOSE MODAL
-	const [isModalOpen, setIsModalOpen] = useState(true)
+	// const [isModalOpen, setIsModalOpen] = useState(true)
 	const closeDetailsModal = (value) => {
+		props.searchModalFunc(false)
 		searchModalState(value)
 		dispatch({
 			type: actionTypes.SEARCH_UI_TOGGLE,
@@ -112,35 +110,39 @@ function NavBarSearch(props) {
 	}
 
 	return (
+		<Fade left cascade>
 		<Modal overlayClassName={`navbar-search-container ${periodicSearch}`}
 			className="navbar-search-inner flex-row"
-			isOpen={isModalOpen}
+			isOpen={props.searchModalVal}
 			shouldCloseOnOverlayClick={true}
 			onRequestClose={() => {
 				closeDetailsModal(periodicSearch)
 			}}
 		>
-			<input type="text" 
-				onChange={(e) => handleMenuSearchText(e.target.value)}
-				onKeyPress={(e) => handleMenuSearchText(e.target.value)}
-				className={`navbar-search-txtbox navbar-item`} 
-				placeholder="Search element..."
-			/>
-			<div className="navbar-search-sort-box flex-row">
-				<div onClick={() => sortByValue('atomic-number')} className={byAtomicNumber}>Atomic Number</div>
-				<div onClick={() => sortByValue('name')} className={byName}>Name</div>
-				<div onClick={() => sortByValue('symbol')} className={bySymbol}>Symbol</div>
-			</div>
+			<Zoom delay={50}>
+				<input type="text" 
+					onChange={(e) => handleMenuSearchText(e.target.value)}
+					onKeyPress={(e) => handleMenuSearchText(e.target.value)}
+					className={`navbar-search-txtbox navbar-item`} 
+					placeholder="Search by element name..."
+				/>
+			</Zoom>
+			<Fade bottom cascade delay={100}>
+				<div className="navbar-search-sort-box flex-row">
+					<div onClick={() => sortByValue('atomic-number')} className={byAtomicNumber}>Atomic Number</div>
+					<div onClick={() => sortByValue('name')} className={byName}>Name</div>
+					<div onClick={() => sortByValue('symbol')} className={bySymbol}>Symbol</div>
+				</div>
+			</Fade>
 			<aside className="navbar-search-tab-container">
-			<Fade bottom cascade delay={500}>
 				<section className="navbar-search-tab-box flex-row">
 					{elementToAlphabets.map((element, keyId) => {
-						return <NavBarElementTab key={keyId} bomb={element.number} func={handleNavBarElementTab} element={element} />
+						return <NavBarSearchElementTab key={keyId} bomb={element.number} func={handleNavBarElementTab} element={element} />
 					})}
 				</section>
-			</Fade>
 			</aside>
 		</Modal>
+		</Fade>
 	)
 }
 
