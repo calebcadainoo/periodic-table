@@ -11,8 +11,7 @@ function NavBarSearch(props) {
 	const elementToAlphabets = periodicSearchList
 	elementToAlphabets.sort((a, b) => a.name.localeCompare(b.name))
 
-	// search logic
-	const searchList = periodicSearchList
+	// SEARCH LOGIC
 	const handleMenuSearchText = (value) => {
 		const searchResults = periodicTable.filter((element) => element?.name?.toLowerCase().includes(value.toLowerCase()))
 		
@@ -20,11 +19,9 @@ function NavBarSearch(props) {
 			type: actionTypes.SEARCH_LIST,
 			periodicSearchList: searchResults
 		})
-
-		console.log(value.toLowerCase())
-		console.log(value, searchResults)
 	}
 
+	// NAV BAR TABS
 	const handleNavBarElementTab = (atomicNo) => {
 		closeDetailsModal(periodicSearch) // close search modal
 		// set selected element
@@ -66,28 +63,26 @@ function NavBarSearch(props) {
 
 	return (
 		<Modal overlayClassName={`navbar-search-container ${periodicSearch}`}
-		className="navbar-search-inner flex-row"
-		isOpen={isModalOpen}
-		shouldCloseOnOverlayClick={true}
-		onRequestClose={() => {
-			closeDetailsModal(periodicSearch)
-		}}
+			className="navbar-search-inner flex-row"
+			isOpen={isModalOpen}
+			shouldCloseOnOverlayClick={true}
+			onRequestClose={() => {
+				closeDetailsModal(periodicSearch)
+			}}
 		>
-			{/* <div className="navbar-search-inner flex-row"> */}
-				<input type="text" 
-					onChange={(e) => handleMenuSearchText(e.target.value)}
-					onKeyPress={(e) => handleMenuSearchText(e.target.value)}
-					className={`navbar-search-txtbox navbar-item`} 
-					placeholder="Search element..."
-				/>
-				<aside className="navbar-search-tab-container">
-					<section className="navbar-search-tab-box flex-row">
-						{elementToAlphabets.map((element, keyId) => {
-							return <NavBarElementTab key={keyId} bomb={element.number} func={handleNavBarElementTab} element={element} />
-						})}
-					</section>
-				</aside>
-			{/* </div> */}
+			<input type="text" 
+				onChange={(e) => handleMenuSearchText(e.target.value)}
+				onKeyPress={(e) => handleMenuSearchText(e.target.value)}
+				className={`navbar-search-txtbox navbar-item`} 
+				placeholder="Search element..."
+			/>
+			<aside className="navbar-search-tab-container">
+				<section className="navbar-search-tab-box flex-row">
+					{elementToAlphabets.map((element, keyId) => {
+						return <NavBarElementTab key={keyId} bomb={element.number} func={handleNavBarElementTab} element={element} />
+					})}
+				</section>
+			</aside>
 		</Modal>
 	)
 }

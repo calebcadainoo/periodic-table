@@ -5,7 +5,7 @@ function NavBarElementTab({element, func}) {
 	const [{colorMap}] = useDataLayerValue()
 
 	return (
-		<div onClick={() => func(element?.number)} className="navbar-search-tab flex-row">
+		<div onClick={() => func(element)} className="navbar-search-tab flex-row">
 			{/* symbol */}
 			<div className="navbar-search-tab-symbol" style={{
 				background: colorMap[element.category],
@@ -15,7 +15,7 @@ function NavBarElementTab({element, func}) {
 			{/* other details */}
 			<div className="navbar-search-tab-main">
 				<div className="navbar-search-tab-value">
-					<label>Name</label>
+					<label>{`${element?.number}. Name`}</label>
 					<div>{element?.name}</div>
 				</div>
 				<div className="navbar-search-tab-value">
