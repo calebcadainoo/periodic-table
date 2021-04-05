@@ -19,6 +19,7 @@ export const initialState = {
 	periodicDetails: false,
 	periodicSelectedElement: undefined,
 	periodicSearch: "hidebx",
+	periodicSearchList: pt.elements,
 }
 
 export const actionTypes = {
@@ -29,6 +30,7 @@ export const actionTypes = {
 	SET_DETAILS_MODAL: 'SET_DETAILS_MODAL',
 	SET_SELECTED_ELEMENT: 'SET_SELECTED_ELEMENT',
 	SEARCH_UI_TOGGLE: 'SEARCH_UI_TOGGLE',
+	SEARCH_LIST: 'SEARCH_LIST',
 }
 
 const reducer = (state, action) => {
@@ -69,6 +71,11 @@ const reducer = (state, action) => {
 			return {
 				...state,
 				periodicSearch: action.periodicSearch,
+			}
+		case actionTypes.SEARCH_LIST:
+			return {
+				...state,
+				periodicSearchList: action.periodicSearchList
 			}
 		default:
 			return state

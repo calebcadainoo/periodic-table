@@ -6,19 +6,29 @@ import { actionTypes } from '../../context-api/reducer'
 import Modal from 'react-modal'
 
 function NavBarSearch(props) {
-	const[{ periodicTable, periodicSearch }, dispatch] = useDataLayerValue()
+	const[{ periodicTable, periodicSearchList, periodicSearch }, dispatch] = useDataLayerValue()
 	// sort elements in alphabetical order
-	const elementToAlphabets = periodicTable
+	const elementToAlphabets = periodicSearchList
 	elementToAlphabets.sort((a, b) => a.name.localeCompare(b.name))
 
+	// search logic
+	const searchList = periodicSearchList
 	const handleMenuSearchText = (value) => {
-		console.log(value)
+		const searchResults = periodicTable.filter((element) => element?.name?.toLowerCase().includes(value.toLowerCase()))
+		
+		dispatch({
+			type: actionTypes.SEARCH_LIST,
+			periodicSearchList: searchResults
+		})
+
+		console.log(value.toLowerCase())
+		console.log(value, searchResults)
 	}
 
 	const handleNavBarElementTab = (atomicNo) => {
 		closeDetailsModal(periodicSearch) // close search modal
 		// set selected element
-		const selectedElement = periodicTable.filter((element) => element.number === atomicNo)[0]
+		const selectedElement = periodicSearchList.filter((element) => element.number === atomicNo)[0]
 		
 		dispatch({
 			type: actionTypes.SET_DETAILS_MODAL,
@@ -66,6 +76,7 @@ function NavBarSearch(props) {
 			{/* <div className="navbar-search-inner flex-row"> */}
 				<input type="text" 
 					onChange={(e) => handleMenuSearchText(e.target.value)}
+					onKeyPress={(e) => handleMenuSearchText(e.target.value)}
 					className={`navbar-search-txtbox navbar-item`} 
 					placeholder="Search element..."
 				/>
