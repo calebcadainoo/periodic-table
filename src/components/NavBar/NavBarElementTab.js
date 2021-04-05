@@ -5,10 +5,10 @@ function NavBarElementTab({element, func}) {
 	const [{colorMap}] = useDataLayerValue()
 
 	return (
-		<div onClick={() => func(element)} className="navbar-search-tab flex-row">
+		<div onClick={() => func(element?.number)} className="navbar-search-tab flex-row">
 			{/* symbol */}
 			<div className="navbar-search-tab-symbol" style={{
-				background: colorMap[element.category],
+				background: colorMap[element?.category],
 			}}>
 				{element.symbol}
 			</div>

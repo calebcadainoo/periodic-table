@@ -96,7 +96,7 @@
 .navbar-search-container{
 	width: 100vw;
 	height: 100vh;
-	background: rgba(0, 0, 0, 0.5);
+	background: rgba(0, 0, 0, 0.7);
 	position: fixed;
 	top: 0px;
 	left: 0;
@@ -132,6 +132,33 @@
 	margin-bottom: 20px;
 }
 
+/* sort box */
+.navbar-search-sort-box{
+	gap: 10px;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	background: rgba(255, 255, 255, 0.1);
+	padding: 4px;
+}
+
+.navbar-sort-type{
+	padding: 5px 10px;
+	min-width: 90px;
+	text-align: center;
+	cursor: pointer;
+	text-transform: uppercase;
+	font-size: 12px;
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 5px;
+}
+
+.navbar-sort-selected{
+	color: var(--app-background);
+	border-radius: 5px;
+	background: rgba(255, 255, 255, 1);
+}
+
+/* element list */
 .navbar-search-tab-container{
 	flex: 6;
 	overflow: auto;
