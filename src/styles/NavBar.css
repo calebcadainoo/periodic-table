@@ -80,12 +80,12 @@
 	gap: 15px;
 }
 
-.navbar-search{
-  width: 20px;
-  height: 20px;
+.navbar-about{
+  width: 25px;
+  height: 25px;
 }
 
-.navbar-search img{
+.navbar-about img{
   width: 65%;
   object-fit: contain;
   align-self: center;

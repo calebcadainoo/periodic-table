@@ -99,7 +99,6 @@ function NavBarSearch(props) {
 	}
 
 	// CLOSE MODAL
-	// const [isModalOpen, setIsModalOpen] = useState(true)
 	const closeDetailsModal = (value) => {
 		props.searchModalFunc(false)
 		searchModalState(value)
