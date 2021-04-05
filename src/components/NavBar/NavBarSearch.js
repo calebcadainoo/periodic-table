@@ -34,12 +34,13 @@ function NavBarSearch(props) {
 		switch (value) {
 			case "hidebx":
 				setIsModalOpen(false)
+				props.func('menu-tapped')
 				break;
 				
-				default:
-					setIsModalOpen(true)
-					props.func('')
-				break;
+			default:
+				setIsModalOpen(true)
+				props.func('')
+			break;
 		}
 	}
 

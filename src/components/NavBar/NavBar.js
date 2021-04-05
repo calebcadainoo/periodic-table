@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react'
+/* eslint-disable no-empty-pattern */
+/* eslint-disable no-unused-vars */
+import React, { useState } from 'react'
 import '../../styles/NavBar.css'
 import SearchIcon from '../../ico/search.svg'
 import { useDataLayerValue } from '../../context-api/DataLayer'
@@ -6,8 +8,7 @@ import { actionTypes } from '../../context-api/reducer'
 import NavBarSearch from './NavBarSearch'
 
 function NavBar() {
-  const[{ periodicTable, periodicSearch }, dispatch] = useDataLayerValue()
-  const [menuAboutDev, setMenuAboutDev] = useState()
+  const[{}, dispatch] = useDataLayerValue()
   const [menuSearchIcon, setMenuSearchIcon] = useState('')
   // const handleMenuSearchText = () => {
 
@@ -26,7 +27,7 @@ function NavBar() {
 			})
     } else {
       setMenuOpen(false)
-      setMenuCloseClass('')
+      // setMenuCloseClass('')
       dispatch({
 				type: actionTypes.SEARCH_UI_TOGGLE,
 				periodicSearch: "hidebx" 
