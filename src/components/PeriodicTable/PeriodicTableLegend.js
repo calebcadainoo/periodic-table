@@ -1,3 +1,4 @@
+/* eslint-disable no-empty-pattern */
 import React, { useState, useRef } from 'react'
 import { useDataLayerValue } from '../../context-api/DataLayer'
 import { actionTypes } from '../../context-api/reducer'
@@ -23,26 +24,19 @@ function PeriodicTableLegend() {
     // if (typeof elcate === "string") {
       dispatch({
         type: actionTypes.SET_PERIODIC_EL_OPACITY,
-        periodicElOpacity: 0.2
+        periodicElOpacity: 0.1
       })
     // }
 
 		// console.log(elcate)
     setCateStyles(value)
-		console.log(cateStyles)
-
 	}
 
   return (
     <aside className="pt-legend">
-      <style dangerouslySetInnerHTML={{__html: `aside[data-category="${cateStyles}"]{
-        opacity: 1 !important;
-        background: grey;
-      }`}} />
       <style dangerouslySetInnerHTML={{__html: `
-        div[data-category="${cateStyles}"]{
+        aside[data-category="${cateStyles}"]{
           opacity: 1 !important;
-          background: grey;
         }
       `}} />
       {Object.keys(colorMap).map((category, keyId) => (
