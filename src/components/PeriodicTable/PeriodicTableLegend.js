@@ -10,7 +10,7 @@ function PeriodicTableLegend() {
 
   // const [cateHighlight, setCateHighlight] = useState('pt-legend-selected')
   const [cateStyles, setCateStyles] = useState('')
-  const handleCategoryClick = function (value) {
+  const handleCategoryClick = function (e, value) {
 		// let targetEl = e.target
     // if (targetEl.parentElement.className !== "pt-legend-item") {
     //   targetEl = targetEl.parentElement
@@ -27,8 +27,15 @@ function PeriodicTableLegend() {
         periodicElOpacity: 0.1
       })
     // }
-
-		// console.log(elcate)
+    
+    const pop = `.pt-legend-item[data-category="${value}"]`
+    const remover = document.querySelectorAll('.pt-legend-item')
+    Object.entries(remover).map((ptItem) => {
+      return ptItem[1].classList.remove('pt-legend-item-selected')
+      // return console.log(ptItem[1])
+    })
+    document.querySelector(pop).classList.add('pt-legend-item-selected')
+		console.log(typeof remover, remover)
     setCateStyles(value)
 	}
 
@@ -40,7 +47,7 @@ function PeriodicTableLegend() {
         }
       `}} />
       {Object.keys(colorMap).map((category, keyId) => (
-        <div onClick={() => handleCategoryClick(category)}
+        <div onClick={(e) => handleCategoryClick(e, category)}
             key={keyId} 
             ref={legendItem}
             data-category={category} 

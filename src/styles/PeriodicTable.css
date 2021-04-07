@@ -66,6 +66,12 @@
   box-shadow: 0px 5px 22px rgba(0, 0, 0, 0.3);
 }
 
+.pt-legend-item-selected {
+  background: #fff;
+  color: var(--app-menu);
+  box-shadow: 0px 5px 22px rgba(0, 0, 0, 0.3);
+}
+
 .pt-legend-color{
   width: 25px;
   height: 15px;
