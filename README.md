@@ -8,23 +8,40 @@ An Educational Chemistry React app that visually shows the properties of the ele
 Happy learning, take a look around and explore:
 https://webperiodictable.web.app/
 
-## npm packages used
-1. `hex-to-rgba` - convert hex to rgba
-```sh
-npm install --save hex-to-rgba
-```
+# Functions
+## 1. App Main View
+![app main view](screenshots/app-view.png)
 
-2. `periodic-table` - get all elements and related values
+## 2. Category Filter Highlight
+### Filter by Diatomic Nonmetal
+![app main view](screenshots/category-highlight-a.png)
+### Filter by Noble Gas
+![app main view](screenshots/category-highlight-b.png)
+### Filter by Polyatomic Nonmetals
+![app main view](screenshots/category-highlight-c.png)
+
+## 3. Search Sort Types
+### Search from Textfield
+![app main view](screenshots/search-abilities.png)
+### Sort by Atomic Number
+![app main view](screenshots/sort-by-atomic-number.png)
+### Sort by Name
+![app main view](screenshots/sort-by-name.png)
+### Sort by Symbol
+![app main view](screenshots/sort-by-symbol.png)
+
+## npm packages used
+1. `periodic-table` - get all elements and related values
 ```sh
 npm install periodic-table
 ```
 
-3. `element-histories` - gathering histories(including images) about each element
+2. `element-histories` - gathering histories(including images) about each element
 ```sh
 npm install element-histories
 ```
 
-4. CSS Color Palettes
+3. CSS Color Palettes
 ```sh
 :root{
   --app-background: #313740;

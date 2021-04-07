@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.8c24eb55.chunk.css",
-    "main.js": "/static/js/main.25bf9526.chunk.js",
-    "main.js.map": "/static/js/main.25bf9526.chunk.js.map",
+    "main.css": "/static/css/main.c4da29d9.chunk.css",
+    "main.js": "/static/js/main.3f6fbdde.chunk.js",
+    "main.js.map": "/static/js/main.3f6fbdde.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.7f6f18de.js",
     "runtime-main.js.map": "/static/js/runtime-main.7f6f18de.js.map",
     "static/js/2.c1dd1f8e.chunk.js": "/static/js/2.c1dd1f8e.chunk.js",
@@ -10,10 +10,11 @@
     "static/js/3.c5050e33.chunk.js": "/static/js/3.c5050e33.chunk.js",
     "static/js/3.c5050e33.chunk.js.map": "/static/js/3.c5050e33.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.8c24eb55.chunk.css.map": "/static/css/main.8c24eb55.chunk.css.map",
+    "static/css/main.c4da29d9.chunk.css.map": "/static/css/main.c4da29d9.chunk.css.map",
     "static/js/2.c1dd1f8e.chunk.js.LICENSE.txt": "/static/js/2.c1dd1f8e.chunk.js.LICENSE.txt",
     "static/media/about.85337c45.svg": "/static/media/about.85337c45.svg",
     "static/media/PeriodicTableDetails.css": "/static/media/wikipedia-logo.ba31b234.svg",
+    "static/media/PeriodicTable.css": "/static/media/clear.19d48b0e.svg",
     "static/media/NavBar.css": "/static/media/input-search.d935998b.svg",
     "static/media/overview.b66d83ec.svg": "/static/media/overview.b66d83ec.svg",
     "static/media/property.f00eedc0.svg": "/static/media/property.f00eedc0.svg",
@@ -22,7 +23,7 @@
   "entrypoints": [
     "static/js/runtime-main.7f6f18de.js",
     "static/js/2.c1dd1f8e.chunk.js",
-    "static/css/main.8c24eb55.chunk.css",
-    "static/js/main.25bf9526.chunk.js"
+    "static/css/main.c4da29d9.chunk.css",
+    "static/js/main.3f6fbdde.chunk.js"
   ]
 }
