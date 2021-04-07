@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.4](https://github.com/calebcadainoo/periodic-table/compare/v0.1.3...v0.1.4) (2021-04-07)
+
+
+### Features
+
+* update docs with screenshots and app functions ([1e02b78](https://github.com/calebcadainoo/periodic-table/commit/1e02b78776e3073c8400bba4153b8ca36fbc2b8c))
+
 ### 0.1.2 (2021-04-07)
 
 
