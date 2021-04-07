@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.5](https://github.com/calebcadainoo/periodic-table/compare/v0.1.4...v0.1.5) (2021-04-07)
+
+
+### Features
+
+* add about links to console and about me ([d7befcc](https://github.com/calebcadainoo/periodic-table/commit/d7befcc14294a773261c23aeca6352991a0ff4bc))
+* increase font size of search field ([c5884bf](https://github.com/calebcadainoo/periodic-table/commit/c5884bf996066c78b084be8abe43a241efff253a))
+* remove all console logs from context api ([518ebe4](https://github.com/calebcadainoo/periodic-table/commit/518ebe466f81223db9b147be7ff2c8a3d7b7bea6))
+
 ### [0.1.4](https://github.com/calebcadainoo/periodic-table/compare/v0.1.3...v0.1.4) (2021-04-07)
 
 
