@@ -72,6 +72,36 @@
   box-shadow: 0px 5px 22px rgba(0, 0, 0, 0.3);
 }
 
+.btn-pt-legend-clear {
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 20px;
+  background: var(--app-menu);
+  text-transform: uppercase;
+  cursor: pointer;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0px 5px 22px rgba(0, 0, 0, 0.5);
+  padding: 7px 20px;
+  padding-left: 40px;
+  background-image: url(../ico/clear.svg);
+  background-repeat: no-repeat;
+  background-position: 15px;
+  background-size: 10px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.btn-pt-legend-show {
+  top: -50px;
+  opacity: 1;
+  visibility: visible;
+}
+
 .pt-legend-color{
   width: 25px;
   height: 15px;

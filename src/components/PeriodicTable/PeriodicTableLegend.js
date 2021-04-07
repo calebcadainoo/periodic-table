@@ -7,6 +7,13 @@ function PeriodicTableLegend() {
   const [{colorMap}] = useDataLayerValue()
   const [{}, dispatch] = useDataLayerValue()
 
+  const unHighlightCategory = () => {
+    const remover = document.querySelectorAll('.pt-legend-item')
+    Object.entries(remover).map((ptItem) => {
+      return ptItem[1].classList.remove('pt-legend-item-selected')
+    })
+  }
+
   const [cateStyles, setCateStyles] = useState('')
   const handleCategoryClick = function (e, value) {
     dispatch({
@@ -15,13 +22,20 @@ function PeriodicTableLegend() {
     })
     
     const pop = `.pt-legend-item[data-category="${value}"]`
-    const remover = document.querySelectorAll('.pt-legend-item')
-    Object.entries(remover).map((ptItem) => {
-      return ptItem[1].classList.remove('pt-legend-item-selected')
-    })
+    unHighlightCategory()
     document.querySelector(pop).classList.add('pt-legend-item-selected')
 		setCateStyles(value)
+    document.querySelector('.btn-pt-legend-clear').classList.add('btn-pt-legend-show')
 	}
+
+  const clearCategoryHighlight = () => {
+    dispatch({
+      type: actionTypes.SET_PERIODIC_EL_OPACITY,
+      periodicElOpacity: 1
+    })
+    unHighlightCategory()
+    document.querySelector('.btn-pt-legend-clear').classList.remove('btn-pt-legend-show')
+  }
 
   return (
     <aside className="pt-legend">
@@ -30,6 +44,7 @@ function PeriodicTableLegend() {
           opacity: 1 !important;
         }
       `}} />
+      <button onClick={clearCategoryHighlight} className="btn-pt-legend-clear">Clear Filter</button>
       {Object.keys(colorMap).map((category, keyId) => (
         <div onClick={(e) => handleCategoryClick(e, category)}
             key={keyId} 
