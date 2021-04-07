@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.7](https://github.com/calebcadainoo/periodic-table/compare/v0.1.6...v0.1.7) (2021-04-07)
+
+
+### Features
+
+* make about me font bold ([fd4ca00](https://github.com/calebcadainoo/periodic-table/commit/fd4ca0022ddfac4580e53b223f1f4b8f78a858e0))
+
 ### [0.1.6](https://github.com/calebcadainoo/periodic-table/compare/v0.1.5...v0.1.6) (2021-04-07)
 
 
