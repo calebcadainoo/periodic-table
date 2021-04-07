@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.6](https://github.com/calebcadainoo/periodic-table/compare/v0.1.5...v0.1.6) (2021-04-07)
+
+
+### Features
+
+* make new build for version 0.1.5 ([09219e6](https://github.com/calebcadainoo/periodic-table/commit/09219e6fb0ce774a19b636a68845cb43c584238b))
+
 ### [0.1.5](https://github.com/calebcadainoo/periodic-table/compare/v0.1.4...v0.1.5) (2021-04-07)
 
 
