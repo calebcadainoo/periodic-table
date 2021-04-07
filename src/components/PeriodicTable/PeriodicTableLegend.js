@@ -1,12 +1,11 @@
 /* eslint-disable no-empty-pattern */
-import React, { useState, useRef } from 'react'
+import React, { useState } from 'react'
 import { useDataLayerValue } from '../../context-api/DataLayer'
 import { actionTypes } from '../../context-api/reducer'
 
 function PeriodicTableLegend() {
   const [{colorMap}] = useDataLayerValue()
   const [{}, dispatch] = useDataLayerValue()
-  const legendItem = useRef(null)
 
   const [cateStyles, setCateStyles] = useState('')
   const handleCategoryClick = function (e, value) {
@@ -34,7 +33,6 @@ function PeriodicTableLegend() {
       {Object.keys(colorMap).map((category, keyId) => (
         <div onClick={(e) => handleCategoryClick(e, category)}
             key={keyId} 
-            ref={legendItem}
             data-category={category} 
             className="pt-legend-item">
           <div className="pt-legend-color"style={{ background: colorMap[category] }}></div>
