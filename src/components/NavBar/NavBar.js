@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import '../../styles/NavBar.css'
-import AboutIcon from '../../ico/about.svg'
 import { useDataLayerValue } from '../../context-api/DataLayer'
 import { actionTypes } from '../../context-api/reducer'
 import NavBarSearch from './NavBarSearch'
@@ -38,8 +37,8 @@ function NavBar() {
           Periodic Table
         </div>
         <div className="navbar-item navbar-search-holder">
-          <a href="https://linkedin.com/in/calebcadainoo" target="_blank" rel="noreferrer">
-            <img className={`navbar-item navbar-about`} src={AboutIcon} alt="about icon" title="About Developer"/>
+          <a className="navbar-about-me" href="https://github.com/calebcadainoo" target="_blank" rel="noreferrer">
+            About Me
           </a>
         </div>
       </nav>
