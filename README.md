@@ -30,18 +30,8 @@ https://webperiodictable.web.app/
 ### Sort by Symbol
 ![app main view](screenshots/sort-by-symbol.png)
 
-## npm packages used
-1. `periodic-table` - get all elements and related values
-```sh
-npm install periodic-table
-```
 
-2. `element-histories` - gathering histories(including images) about each element
-```sh
-npm install element-histories
-```
-
-3. CSS Color Palettes
+### CSS Color Palettes
 ```sh
 :root{
   --app-background: #313740;
