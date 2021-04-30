@@ -1,21 +1,19 @@
-
-
-.navbar{
-  height: 50px;
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  background: var(--app-popup-top);
-  box-shadow: 0px 5px 22px rgba(0, 0, 0, 0.3);
+.navbar {
+	height: 50px;
+	display: flex;
+	justify-content: space-between;
+	padding: 10px;
+	background: var(--app-popup-top);
+	box-shadow: 0px 5px 22px rgba(0, 0, 0, 0.3);
 }
 
-.navbar-item{
-  align-self: center;
-  margin: 0;
+.navbar-item {
+	align-self: center;
+	margin: 0;
 }
 
 /* navbar hamburger */
-.navbar-menu{
+.navbar-menu {
 	width: 30px;
 	height: 30px;
 	align-items: center;
@@ -25,58 +23,60 @@
 	position: relative;
 }
 
-.navbar-menu > .middle{
+.navbar-menu > .middle {
 	width: 100%;
 	height: 2px !important;
 	background: var(--app-menu-text);
 	transition: 0.3s ease;
 	-webkit-transition: 0.3s ease;
-  transform: translateY(13px);
+	transform: translateY(13px);
 }
 
-.navbar-menu > .middle:before, .navbar-menu > .middle:after{
-	content: '';
+.navbar-menu > .middle:before,
+.navbar-menu > .middle:after {
+	content: "";
 	width: 100%;
 	height: 2px !important;
-  background: var(--app-menu-text);
+	background: var(--app-menu-text);
 	position: absolute;
 	transition: 0.3s ease;
 	-webkit-transition: 0.3s ease;
 }
 
-.navbar-menu > .middle:before{
+.navbar-menu > .middle:before {
 	transform: translateY(-400%);
 }
 
-.navbar-menu > .middle:after{
+.navbar-menu > .middle:after {
 	transform: translateY(400%);
 }
 
-.menu-tapped{
+.menu-tapped {
 	position: relative;
 }
 
-.menu-tapped .middle{
+.menu-tapped .middle {
 	background: transparent;
 	transition: 0.01s ease;
 }
 
-.menu-tapped .middle:before{
+.menu-tapped .middle:before {
 	transform: rotate(45deg) translate(3%, -7%);
 }
 
-.menu-tapped .middle:after{
+.menu-tapped .middle:after {
 	transform: rotate(-45deg) translate(-0%, -3%);
 }
 
 /* navbar name */
-.navbar-name{
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+.navbar-name {
+	font-weight: 700;
+	letter-spacing: 1px;
+	text-transform: uppercase;
 }
 
-.navbar-search-holder{
+.navbar-search-holder {
+	display: flex;
 	gap: 15px;
 }
 
@@ -97,9 +97,8 @@
 	padding-right: 20px;
 }
 
-
 /* ===== NAV BAR SEARCH CONTAINER ===== */
-.navbar-search-container{
+.navbar-search-container {
 	width: 100vw;
 	height: 100vh;
 	background: rgba(0, 0, 0, 0.7);
@@ -113,14 +112,14 @@
 	padding-top: 70px;
 }
 
-.navbar-search-inner{
+.navbar-search-inner {
 	max-width: 500px;
 	height: 100%;
 	margin: auto;
 	flex-direction: column;
 }
 
-.navbar-search-txtbox{
+.navbar-search-txtbox {
 	flex-shrink: 0;
 	width: 100%;
 	height: 45px;
@@ -140,7 +139,7 @@
 }
 
 /* sort box */
-.navbar-search-sort-box{
+.navbar-search-sort-box {
 	gap: 10px;
 	margin-bottom: 20px;
 	border-radius: 5px;
@@ -148,7 +147,7 @@
 	padding: 4px;
 }
 
-.navbar-sort-type{
+.navbar-sort-type {
 	padding: 5px 10px;
 	min-width: 90px;
 	text-align: center;
@@ -159,19 +158,19 @@
 	border-radius: 5px;
 }
 
-.navbar-sort-selected{
+.navbar-sort-selected {
 	color: var(--app-background);
 	border-radius: 5px;
 	background: rgba(255, 255, 255, 1);
 }
 
 /* element list */
-.navbar-search-tab-container{
+.navbar-search-tab-container {
 	flex: 6;
 	overflow: auto;
 }
 
-.navbar-search-tab-box{
+.navbar-search-tab-box {
 	flex-direction: column;
 }
 
@@ -184,7 +183,7 @@
 	border-radius: 5px;
 }
 
-.navbar-search-tab-symbol{
+.navbar-search-tab-symbol {
 	flex-shrink: 0;
 	background: green;
 	width: 60px;
@@ -194,7 +193,7 @@
 	font-size: 25px;
 }
 
-.navbar-search-tab-main{
+.navbar-search-tab-main {
 	width: 100%;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
@@ -206,8 +205,37 @@
 	padding: 0 7px;
 } */
 
-.navbar-search-tab-value label{
+.navbar-search-tab-value label {
 	opacity: 0.5;
 	font-size: 10px;
 	text-transform: uppercase;
+}
+
+.navbar-sm-circle {
+	width: 30px;
+	height: 30px;
+	/* background-color: #fff; */
+	background-color: var(--app-menu-text);
+	border-radius: 50%;
+	display: grid;
+	place-items: center;
+	opacity: 0.5;
+	transition: 0.2s ease;
+	-webkit-transition: 0.2s ease;
+}
+
+.navbar-sm-circle:hover {
+	opacity: 1;
+}
+
+.navbar-sm-circle img {
+	width: 15px;
+	height: 15px;
+	object-fit: contain;
+}
+
+@media screen and (max-width: 480px) {
+	.navbar-hide-mobile {
+		display: none;
+	}
 }
